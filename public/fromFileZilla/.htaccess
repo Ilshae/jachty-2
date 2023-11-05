@@ -1,0 +1,81 @@
+AddHandler application/x-httpd-php72 php
+
+Order Deny, Allow
+Deny from 194.5.48.246 45.135.186.55 84.17.34.145 23.228.109.147 114.119.151.17 23.228.109.147 114.119.151.17 154.16.166.227 45.135.186.126 45.135.186.80 188.164.194.18 194.5.48.248 23.228.109.147 
+
+RewriteEngine On
+
+Header set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload
+Header set Content-Security-Policy: 
+default-src https: 'unsafe-eval' 'unsafe-inline'; 
+object-src 'none';
+style-src   'self' https://fonts.googleapis.com/css2?family=Courgette&family=Roboto&family=Oswald&display=swap;
+font-src    'self' data: https://fonts.googleapis.com/css2?family=Courgette&family=Roboto&family=Oswald&display=swap;
+frame-ancestors 'none';
+
+Header set X-Content-Type-Options: nosniff
+
+Header set X-Frame-Options: DENY
+
+Header set X-XSS-Protection: 1; mode=block
+
+# Remove trailing slash from non-filepath urls
+RewriteCond %{REQUEST_URI} /(.+)/$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ https://jachtypruszynski.pl/%1 [R=301,L]
+
+# Remove trailing slash from query string
+RewriteCond %{QUERY_STRING} (.+)/$
+RewriteRule (.*)$ https://jachtypruszynski.pl/$1?%1 [R=301,L]
+
+# Remove trailing slash from directory
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+)/$ https://jachtypruszynski.pl/$1 [R=301,L]
+
+# Force HTTPS and remove WWW
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [OR,NC]
+RewriteCond %{HTTPS} off  
+RewriteRule ^(.*)$ https://jachtypruszynski.pl/$1 [R=301,L]
+
+ErrorDocument 404 /404.php
+  RewriteBase /
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+
+  # whitelist 
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/twister-800n-harpia$
+RewriteCond %{REQUEST_URI} !^/antila-244-borneo$
+RewriteCond %{REQUEST_URI} !^/aquatic-25t-morrigan$
+RewriteCond %{REQUEST_URI} !^/phobos-25-saskia$
+RewriteCond %{REQUEST_URI} !^/antila-26cc-driada$
+RewriteCond %{REQUEST_URI} !^/antila-26cc-solaris$
+RewriteCond %{REQUEST_URI} !^/antila-27-bialy-wilk$
+RewriteCond %{REQUEST_URI} !^/antila-27-skellige$
+RewriteCond %{REQUEST_URI} !^/antila-27-aldonika$
+RewriteCond %{REQUEST_URI} !^/antila-333-przygoda$
+RewriteCond %{REQUEST_URI} !^/antila-282-galapagos$
+RewriteCond %{REQUEST_URI} !^/twister-800n-strzyga$
+RewriteCond %{REQUEST_URI} !^/cennik$
+RewriteCond %{REQUEST_URI} !^/kontakt$
+
+# all other URLs will receive 404
+RewriteRule (.*) - [R=404,L]
+
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+
+
+RewriteCond %{QUERY_STRING} .
+RewriteCond %{HTTP_USER_AGENT} 11A465|Ahrefs|ArchiveBot|AspiegelBot|Baiduspider|bingbot|BLEXBot|Bytespider|CCBot|Curebot|Daum|Detectify|DotBot|Grapeshot|heritrix|Kinza|LieBaoFast|Linguee|LMY47V|MauiBot|Mb2345Browser|MegaIndex|MicroMessenger|MJ12bot|MQQBrowser|PageFreezer|PetalBot|PiplBot|Riddler|Screaming.Frog|Search365bot|SearchBlox|Seekport|SemanticScholarBot|SemrushBot|SEOkicks|serpstatbot|Siteimprove.com|Sogou.web.spider|trendictionbot|TurnitinBot|UCBrowser|weborama-fetcher|Vagabondo|VelenPublicWebCrawler|YandexBot|YisouSpider [NC]
+RewriteRule ^.* - [F,L]
+
+RewriteCond %{REQUEST_METHOD} POST
+RewriteCond %{REMOTE_ADDR} !127.0.0.1
+RewriteRule ^ / [F]
