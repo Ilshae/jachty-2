@@ -1,17 +1,13 @@
 import { FC, lazy } from "react"
 import { Route, Routes } from "react-router-dom"
 import styled, { ThemeProvider } from "styled-components"
-import { theme } from "./theme.ts"
+import { theme, device } from "./theme.ts"
 
 const Home = lazy(() => import("./pages/home/Home.tsx"))
 const Footer = lazy(() => import("./layout/footer/Footer.tsx"))
 
 const App: FC = () => {
   return (
-    // <ErrorBoundary>
-    //     <Suspense fallback={<Loading />}>
-    //         <Navbar />
-
     <ThemeProvider theme={theme}>
       <Wrapper>
         <Routes>
@@ -20,22 +16,28 @@ const App: FC = () => {
         <Footer />
       </Wrapper>
     </ThemeProvider>
-
-    // </Suspense>
-    // </ErrorBoundary>
   )
 }
 
 const Wrapper = styled.div`
-  font-family: ${({ theme }) => theme.fonts.text};
+  font-size: ${({ theme }) => theme.fontSize.regular};
+  font-family: ${({ theme }) => theme.font.text};
   line-height: 1.7;
-  background-color: ${({ theme }) => theme.colors.light};
+  background-color: ${({ theme }) => theme.color.light};
   background-image: url("/assets/backgrounds/anchor1.png"),
     url("/assets/backgrounds/anchor1.png");
-  background-size: 300px 300px;
+  background-size: 250px 250px;
   background-position:
     0 0,
     150px 150px;
+  @media ${device.tablet} {
+    background-size: 300px 300px;
+    background-position:
+      0 0,
+      125px 125px;
+  }
+
+  height: 3000px;
 `
 
 export default App
