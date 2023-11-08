@@ -38,24 +38,20 @@ const Footer: FC = () => {
       </ContactWrapper>
       <CopyrightWrapper>
         <CopyrightSection>
-          <Link to="/">
+          <CompanyLink to="/">
             <img src={"/assets/logos/logo-non-transparent.svg"} alt="logo" />
-          </Link>
-          <Link to="/">
-            <h2>Jachty Pruszyński</h2>
-          </Link>
+          </CompanyLink>
+          <CompanyLink to="/">Jachty Pruszyński</CompanyLink>
         </CopyrightSection>
-        <ContactSection>
-          <h2>
-            <AuthorLink
-              href="https://ilshae.github.io/"
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-            >
-              &copy; Ingrid Pruszyńska 2020
-            </AuthorLink>
-          </h2>
-        </ContactSection>
+        <CopyrightSection>
+          <AuthorLink
+            href="https://ilshae.github.io/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >
+            &copy; Ingrid Pruszyńska 2020
+          </AuthorLink>
+        </CopyrightSection>
       </CopyrightWrapper>
     </Wrapper>
   )
@@ -128,11 +124,33 @@ const CopyrightWrapper = styled.div`
   width: 100%;
 `
 
-const CopyrightSection = styled.div``
+const CopyrightSection = styled.div`
+  display: inline-flex;
+  align-items: center;
+`
 
 const AuthorLink = styled(StyledLink)`
-  //font-family: ${({ theme }) => theme.font.special};
-  font-family: "Courgette", cursive;
+  font-family: ${({ theme }) => theme.font.special};
+`
+
+const CompanyLink = styled(Link)`
+  text-decoration: none !important;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  font-family: ${({ theme }) => theme.font.action};
+  text-transform: uppercase;
+  font-size: ${({ theme }) => theme.fontSize.title};
+
+  &:hover {
+    color: ${({ theme }) => theme.color.secondary};
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    margin-right: 30px;
+  }
 `
 
 export default Footer

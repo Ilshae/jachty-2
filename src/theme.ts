@@ -11,13 +11,14 @@ export const theme = {
     dark: "#020203",
   },
   font: {
-    text: "'Oswald', serif",
-    action: "'Roboto', sans-serif",
+    text: "'Roboto', sans-serif",
+    action: "'Oswald', serif",
     special: "'Courgette', cursive",
   },
   fontSize: {
     regular: "16px",
     subTitle: "20px",
+    title: "24px",
   },
   screenSize: {
     mobileS: "320px",
