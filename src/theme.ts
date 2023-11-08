@@ -27,7 +27,8 @@ export const theme = {
     tablet: "768px",
     laptop: "1024px",
     laptopL: "1440px",
-    desktop: "2560px",
+    desktop: "1980px",
+    desktopL: "2560px",
   },
   shadow: {
     text: "#181818 0px 3px 3px,#181818 0px -3px 3px,#181818 3px 0px 3px,#181818 -3px 0px 3px",
@@ -37,12 +38,12 @@ export const theme = {
 }
 
 export const device = {
-  mobileS: `(min-width: ${theme.screenSize.mobileS})`,
-  mobileM: `(min-width: ${theme.screenSize.mobileM})`,
-  mobileL: `(min-width: ${theme.screenSize.mobileL})`,
-  tablet: `(min-width: ${theme.screenSize.tablet})`,
-  laptop: `(min-width: ${theme.screenSize.laptop})`,
-  laptopL: `(min-width: ${theme.screenSize.laptopL})`,
-  desktop: `(min-width: ${theme.screenSize.desktop})`,
+  mobileS: `(max-width: ${theme.screenSize.mobileS})`,
+  mobileM: `(max-width: ${theme.screenSize.mobileM})`,
+  mobileL: `(max-width: ${theme.screenSize.mobileL})`,
+  tablet: `(max-width: ${theme.screenSize.tablet})`,
+  laptop: `(max-width: ${theme.screenSize.laptop})`,
+  laptopL: `(max-width: ${theme.screenSize.laptopL})`,
+  desktop: `(max-width: ${theme.screenSize.desktop})`,
   desktopL: `(min-width: ${theme.screenSize.desktop})`,
 }
