@@ -47,7 +47,7 @@ const Footer: FC = () => {
           </CopyrightSection>
           <CopyrightSection>
             <AuthorLink
-              href="https://ilshae.github.io/"
+              href={str.portfolio}
               rel="nofollow noopener noreferrer"
               target="_blank"
             >
