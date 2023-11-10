@@ -94,16 +94,15 @@ const Container = styled.div`
   font-size: ${({ theme }) => theme.fontSize.subTitle};
   font-family: ${({ theme }) => theme.font.action};
   width: 100%;
-  max-width: 1700px;
+  max-width: 1900px;
 
   @media ${device.desktop} {
-    max-width: 1340px;
+    margin: 0 100px;
   }
   @media ${device.laptopL} {
-    max-width: 924px;
+    margin: 0 80px;
   }
   @media ${device.laptop} {
-    max-width: 100%;
     font-size: ${({ theme }) => theme.fontSize.regular};
     margin: 0 60px;
   }
@@ -137,8 +136,9 @@ const ContactSection = styled.div`
 
   @media ${device.tablet} {
     &:nth-of-type(2) {
-      align-items: flex-start;
+      align-items: center;
     }
+    align-items: center;
     width: 300px;
   }
 
@@ -186,6 +186,11 @@ const CopyrightWrapper = styled.div`
 const CopyrightSection = styled.div`
   display: inline-flex;
   align-items: center;
+
+  @media ${device.mobileM} {
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const AuthorLink = styled(StyledLink)`
@@ -231,6 +236,7 @@ const CompanyLink = styled(Link)`
 
     @media ${device.mobileM} {
       margin-bottom: 20px;
+      margin-right: 0px;
     }
   }
 `
