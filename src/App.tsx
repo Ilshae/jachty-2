@@ -5,8 +5,8 @@ import { theme, device } from "./theme.ts"
 import { createGlobalStyle } from "styled-components"
 
 const Home = lazy(() => import("./pages/Home.tsx"))
-const Navbar = lazy(() => import("./layout/Navbar.tsx"))
-const Footer = lazy(() => import("./layout/Footer.tsx"))
+const Navbar = lazy(() => import("./layout/navbar/Navbar.tsx"))
+const Footer = lazy(() => import("./layout/footer/Footer.tsx"))
 
 const App: FC = () => {
   return (
