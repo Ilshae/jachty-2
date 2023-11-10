@@ -5,12 +5,14 @@ import { theme, device } from "./theme.ts"
 import { createGlobalStyle } from "styled-components"
 
 const Home = lazy(() => import("./pages/Home.tsx"))
+const Navbar = lazy(() => import("./layout/Navbar.tsx"))
 const Footer = lazy(() => import("./layout/Footer.tsx"))
 
 const App: FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Navbar />
       <Container>
         <Routes>
           <Route path="/" element={<Home />} />
