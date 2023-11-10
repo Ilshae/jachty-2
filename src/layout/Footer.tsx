@@ -1,12 +1,12 @@
 import { FC, ReactNode } from "react"
-import str from "../../data/footer.json"
+import str from "../data/footer.json"
 import styled from "styled-components"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
 import EmailIcon from "@mui/icons-material/Email"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import PhoneIcon from "@mui/icons-material/Phone"
 import { Link } from "react-router-dom"
-import { device } from "../../theme.ts"
+import { device } from "../theme.ts"
 
 const Footer: FC = () => {
   return (
