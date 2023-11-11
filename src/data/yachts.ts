@@ -51,7 +51,7 @@ type PriceListSunday = {
   "03.09 - 01.10": string
 }
 
-type Yacht = {
+export type Yacht = {
   id: string
   url: string
   technicalData: TechnicalData

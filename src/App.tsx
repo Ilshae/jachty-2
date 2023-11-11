@@ -26,7 +26,7 @@ const App: FC = () => {
 const GlobalStyle = createGlobalStyle`
   body {
     font-size: ${({ theme }) => theme.fontSize.regular};
-    font-family: ${({ theme }) => theme.font.text};
+    font-family: ${({ theme }) => theme.fontFamily.text};
     line-height: 1.7;
     background-color: ${({ theme }) => theme.color.light};
     background-image: url("/assets/backgrounds/anchor1.png"),

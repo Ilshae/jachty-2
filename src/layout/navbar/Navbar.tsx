@@ -1,119 +1,96 @@
 import { useState } from "react"
-import { NavLink, Link } from "react-router-dom"
-import MenuIcon from "@mui/icons-material/Menu"
 import styled from "styled-components"
-import CloseIcon from "@mui/icons-material/Close"
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
+import { device } from "../../theme.ts"
+import Company from "./Company.tsx"
+import {
+  OpenMobileMenuButton,
+  CloseMobileMenuButton,
+} from "./MobileMenuButtons.tsx"
+import { Contact, PriceList } from "./NavLinks.tsx"
+import YachtMenu from "./YachtMenu.tsx"
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false)
-  open
+  const [menuState, setMenuState] = useState<MenuState>({ state: "closed" })
+
+  menuState.state === "open" && menuState.screen === "mobile"
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "auto")
 
   return (
-    <>
-      <CompanyName>
-        <Link to="/">Jachty Pruszyński</Link>
-      </CompanyName>
-      <OpenMobileMenu
-        onClick={() => setOpen(true)}
-        className={`btn menu-btn ${open ? "menu-btn-checked" : ""}`}
-      >
-        <MenuIcon />
-      </OpenMobileMenu>
-      <NavLinks>
-        <CloseMobileMenu
-          onClick={() => setOpen(false)}
-          className={`btn close-btn ${!open ? "close-btn-checked" : ""}`}
-        >
-          <CloseIcon />
-        </CloseMobileMenu>
-        <BigDesktopMenu
-          onMouseLeave={() =>
-            document
-              .getElementById("mega-box")!
-              .classList.remove("mega-box-hover")
-          }
-        >
-          <DesktopYachtList
-            onMouseOver={() =>
-              document
-                .getElementById("mega-box")!
-                .classList.add("mega-box-hover")
-            }
-          >
-            Jachty Żaglowe <KeyboardArrowDownIcon />
-          </DesktopYachtList>
-          <input type="checkbox" id="showMega" />
-          <label htmlFor="showMega" className="mobile-item">
-            Jachty Żaglowe
-          </label>
-          <MegaBox id={"mega-box"}>
-            <MegaBoxContent>
-              <MegaBoxColumn>
-                <header>Jachty do 8 m</header>
-              </MegaBoxColumn>
-              <MegaBoxColumn>
-                <header>Jachty od 8 m</header>
-              </MegaBoxColumn>
-              <MegaBoxColumn>
-                <header>Rocznik 2023-2024</header>
-              </MegaBoxColumn>
-            </MegaBoxContent>
-          </MegaBox>
-        </BigDesktopMenu>
-        <PriceList>
-          <NavLink
-            to="/cennik"
-            onClick={() => (
-              setOpen(false),
-              document
-                .getElementById("mega-box")!
-                .classList.remove("mega-box-hover")
-            )}
-          >
-            Cennik
-          </NavLink>
-        </PriceList>
-        <Contact>
-          <NavLink
-            to="/kontakt"
-            onClick={() => (
-              setOpen(false),
-              document
-                .getElementById("mega-box")!
-                .classList.remove("mega-box-hover")
-            )}
-          >
-            Kontakt
-          </NavLink>
-        </Contact>
-      </NavLinks>
-    </>
+    <Nav>
+      <Container>
+        <Company />
+        <OpenMobileMenuButton
+          menuState={menuState}
+          setMenuState={setMenuState}
+        />
+        <NavLinks>
+          <CloseMobileMenuButton
+            menuState={menuState}
+            setMenuState={setMenuState}
+          />
+          <YachtMenu menuState={menuState} setMenuState={setMenuState} />
+          <PriceList />
+          <Contact />
+        </NavLinks>
+      </Container>
+    </Nav>
   )
 }
 
-const CompanyName = styled.div``
+type OpenMenu = {
+  state: "open"
+  screen: "mobile" | "desktop"
+}
+type ClosedMenu = {
+  state: "closed"
+}
 
-const OpenMobileMenu = styled.div``
+export type MenuState = OpenMenu | ClosedMenu
 
-const NavLinks = styled.ul``
+const Nav = styled.nav`
+  height: 60px;
+  line-height: 60px;
+  position: sticky;
+  z-index: 99;
+  background: ${({ theme }) => theme.color.primary};
+  text-transform: uppercase;
+  box-shadow: ${({ theme }) => theme.shadow.box};
+  -webkit-box-shadow: ${({ theme }) => theme.shadow.box};
+  font-family: ${({ theme }) => theme.fontFamily.action};
+  font-size: ${({ theme }) => theme.fontSize.title};
+`
 
-const CloseMobileMenu = styled.li``
+const Container = styled.div`
+  position: relative;
+  max-width: 1300px;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+`
 
-const BigDesktopMenu = styled.li``
+const NavLinks = styled.ul`
+  display: inline-flex;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  // TODO: should this be here?
+  animation: fadein 0.2s;
+  right: 0;
 
-const DesktopYachtList = styled.span``
-
-const MegaBox = styled.div``
-
-const MegaBoxContent = styled.div``
-
-const MegaBoxColumn = styled.div``
-
-const PriceList = styled.li``
-
-const Contact = styled.li``
+  @media ${device.tablet} {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    right: -100%;
+    background: ${({ theme }) => theme.color.primary75};
+    display: block;
+    overflow-y: scroll;
+    box-shadow: ${({ theme }) => theme.shadow.box};
+    margin: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+`
 
 export default Navbar

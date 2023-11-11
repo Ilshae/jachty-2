@@ -10,7 +10,7 @@ export const theme = {
     light50: "#ffffff50",
     dark: "#020203",
   },
-  font: {
+  fontFamily: {
     text: "'Roboto', sans-serif",
     action: "'Oswald', serif",
     special: "'Courgette', cursive",
@@ -19,6 +19,7 @@ export const theme = {
     regular: "16px",
     subTitle: "20px",
     title: "24px",
+    bigTitle: "30px",
   },
   screenSize: {
     mobileS: "320px",

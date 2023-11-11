@@ -92,7 +92,7 @@ const Container = styled.div`
   padding: 16px;
   color: ${({ theme }) => theme.color.light};
   font-size: ${({ theme }) => theme.fontSize.subTitle};
-  font-family: ${({ theme }) => theme.font.action};
+  font-family: ${({ theme }) => theme.fontFamily.action};
   width: 100%;
   max-width: 1900px;
 
@@ -194,7 +194,7 @@ const CopyrightSection = styled.div`
 `
 
 const AuthorLink = styled(StyledLink)`
-  font-family: ${({ theme }) => theme.font.special};
+  font-family: ${({ theme }) => theme.fontFamily.special};
 
   @media ${device.tablet} {
     margin-top: 30px;
@@ -207,7 +207,7 @@ const CompanyLink = styled(Link)`
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-family: ${({ theme }) => theme.font.action};
+  font-family: ${({ theme }) => theme.fontFamily.action};
   text-transform: uppercase;
   font-size: ${({ theme }) => theme.fontSize.title};
 
