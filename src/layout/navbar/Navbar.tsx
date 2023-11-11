@@ -2,10 +2,7 @@ import { useState } from "react"
 import styled from "styled-components"
 import { device } from "../../theme.ts"
 import Company from "./Company.tsx"
-import {
-  OpenMobileMenuButton,
-  CloseMobileMenuButton,
-} from "./MobileMenuButtons.tsx"
+import { HamburgerButton, CloseButton } from "./MobileMenuButtons.tsx"
 import { Contact, PriceList } from "./NavLinks.tsx"
 import YachtMenu from "./YachtMenu.tsx"
 
@@ -20,18 +17,12 @@ const Navbar = () => {
     <Nav>
       <Container>
         <Company />
-        <OpenMobileMenuButton
-          menuState={menuState}
-          setMenuState={setMenuState}
-        />
-        <NavLinks>
-          <CloseMobileMenuButton
-            menuState={menuState}
-            setMenuState={setMenuState}
-          />
+        <HamburgerButton menuState={menuState} setMenuState={setMenuState} />
+        <NavLinks $menuState={menuState}>
+          <CloseButton menuState={menuState} setMenuState={setMenuState} />
           <YachtMenu menuState={menuState} setMenuState={setMenuState} />
-          <PriceList />
-          <Contact />
+          <PriceList menuState={menuState} setMenuState={setMenuState} />
+          <Contact menuState={menuState} setMenuState={setMenuState} />
         </NavLinks>
       </Container>
     </Nav>
@@ -53,7 +44,7 @@ const Nav = styled.nav`
   line-height: 60px;
   position: sticky;
   z-index: 99;
-  background: ${({ theme }) => theme.color.primary};
+  background-color: ${({ theme }) => theme.color.primary};
   text-transform: uppercase;
   box-shadow: ${({ theme }) => theme.shadow.box};
   -webkit-box-shadow: ${({ theme }) => theme.shadow.box};
@@ -69,7 +60,9 @@ const Container = styled.div`
   justify-content: space-between;
 `
 
-const NavLinks = styled.ul`
+const NavLinks = styled.ul<{
+  $menuState: MenuState
+}>`
   display: inline-flex;
   height: 60px;
   padding: 0;
@@ -79,13 +72,17 @@ const NavLinks = styled.ul`
   right: 0;
 
   @media ${device.tablet} {
+    display: ${({ $menuState }) =>
+      $menuState.state === "open" && $menuState.screen === "mobile"
+        ? "block"
+        : "none"};
+    padding-top: 60px;
     position: fixed;
     height: 100vh;
     width: 100%;
     top: 0;
-    right: -100%;
-    background: ${({ theme }) => theme.color.primary75};
-    display: block;
+    left: 0;
+    background-color: ${({ theme }) => theme.color.primary75};
     overflow-y: scroll;
     box-shadow: ${({ theme }) => theme.shadow.box};
     margin: 0;

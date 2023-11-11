@@ -1,86 +1,85 @@
 import styled from "styled-components"
 import { device } from "../../theme.ts"
-import yachts from "../../data/yachts.ts"
+import yachts, { Yacht } from "../../data/yachts.ts"
 import { NavLink } from "react-router-dom"
+import { Dispatch, FC } from "react"
+import { MenuState } from "./Navbar.tsx"
 
-export const YachtList = () => (
-  <Wrapper>
-    <Column>
-      <Header>Jachty do 8 m</Header>
-      <List>
-        {getYachtsBelow8m().map((yacht) => (
-          <Element key={yacht.id}>
-            <StyledNavLink key={yacht.id} to={yacht.url}>
-              {yacht.id}
-            </StyledNavLink>
-          </Element>
-        ))}
-      </List>
-    </Column>
-    <Column>
-      <Header>Jachty od 8 m</Header>
-      {getYachtsAbove8m().map((yacht) => (
-        <Element key={yacht.id}>
-          <StyledNavLink key={yacht.id} to={yacht.url}>
-            {yacht.id}
-          </StyledNavLink>
-        </Element>
-      ))}
-    </Column>
-    <Column>
-      <Header>Rocznik 2022-2024</Header>
-      {getYachtsNew().map((yacht) => (
-        <Element key={yacht.id}>
-          <StyledNavLink key={yacht.id} to={yacht.url}>
-            {yacht.id}
-          </StyledNavLink>
-        </Element>
-      ))}
-    </Column>
-  </Wrapper>
-)
+export const YachtList: FC<{
+  setMenuState: Dispatch<MenuState>
+}> = ({ setMenuState }) => {
+  const getYachtsLinks = (yachts: Yacht[]) =>
+    yachts.map((yacht: Yacht) => (
+      <Element key={yacht.id}>
+        <StyledNavLink
+          key={yacht.id}
+          to={yacht.url}
+          onClick={() => setMenuState({ state: "closed" })}
+        >
+          {yacht.id}
+        </StyledNavLink>
+      </Element>
+    ))
 
-const getYachtsBelow8m = () => {
-  const idList = [
-    "Twister 800N Harpia",
-    "Twister 800N Strzyga",
-    "Aquatic 25T Morrigan",
-    "Antila 24.4 Borneo",
-    "Phobos 25 Saskia",
-  ]
+  const getYachtsBelow8m = () => {
+    const idList = [
+      "Twister 800N Harpia",
+      "Twister 800N Strzyga",
+      "Aquatic 25T Morrigan",
+      "Antila 24.4 Borneo",
+      "Phobos 25 Saskia",
+    ]
 
-  return yachts.filter(({ id }) => idList.includes(id))
-}
+    return yachts.filter(({ id }) => idList.includes(id))
+  }
 
-const getYachtsAbove8m = () => {
-  const idList = [
-    "Antila 27 Biały Wilk",
-    "Antila 33.3 Przygoda",
-    "Antila 27 Skellige",
-    "Antila 26CC Solaris",
-    "Antila 26CC Driada",
-    "Antila 28.2 Galapagos",
-    "Antila 27 Aldonika",
-  ]
+  const getYachtsAbove8m = () => {
+    const idList = [
+      "Antila 27 Biały Wilk",
+      "Antila 33.3 Przygoda",
+      "Antila 27 Skellige",
+      "Antila 26CC Solaris",
+      "Antila 26CC Driada",
+      "Antila 28.2 Galapagos",
+      "Antila 27 Aldonika",
+    ]
 
-  return yachts.filter(({ id }) => idList.includes(id))
-}
+    return yachts.filter(({ id }) => idList.includes(id))
+  }
 
-const getYachtsNew = () => {
-  const idList = [
-    "Phobos 25 Saskia",
-    "Antila 26CC Driada",
-    "Antila 27 Skellige",
-    "Antila 27 Aldonika",
-    "Antila 28.2 Galapagos",
-    "Twister 800N Strzyga",
-  ]
+  const getYachtsNew = () => {
+    const idList = [
+      "Phobos 25 Saskia",
+      "Antila 26CC Driada",
+      "Antila 27 Skellige",
+      "Antila 27 Aldonika",
+      "Antila 28.2 Galapagos",
+      "Twister 800N Strzyga",
+    ]
 
-  return yachts.filter(({ id }) => idList.includes(id))
+    return yachts.filter(({ id }) => idList.includes(id))
+  }
+
+  return (
+    <Wrapper>
+      <Column>
+        <Header>Jachty do 8 m</Header>
+        <List>{getYachtsLinks(getYachtsBelow8m())}</List>
+      </Column>
+      <Column>
+        <Header>Jachty od 8 m</Header>
+        <List>{getYachtsLinks(getYachtsAbove8m())}</List>
+      </Column>
+      <Column>
+        <Header>Rocznik 2022-2024</Header>
+        <List>{getYachtsLinks(getYachtsNew())}</List>
+      </Column>
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`
-  background: ${({ theme }) => theme.color.primary75};
+  background-color: ${({ theme }) => theme.color.primary75};
   padding: 25px 20px;
   width: 100%;
   display: flex;
@@ -92,7 +91,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 20px 0 0 0;
-    background: inherit;
+    background-color: inherit;
   }
 `
 
@@ -143,7 +142,7 @@ const StyledNavLink = styled(NavLink)`
   padding: 10px 16px;
 
   &:hover {
-    background: ${({ theme }) => theme.color.secondary};
+    background-color: ${({ theme }) => theme.color.secondary};
     color: ${({ theme }) => theme.color.dark};
     border-radius: 5px;
   }

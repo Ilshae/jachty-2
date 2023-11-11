@@ -1,27 +1,47 @@
 import { device } from "../../theme.ts"
 import styled from "styled-components"
 import { NavLink } from "react-router-dom"
+import { Dispatch, FC } from "react"
+import { MenuState } from "./Navbar.tsx"
 
-export const PriceList = () => (
-  <Wrapper>
-    <StyledNavLink to="/cennik">Cennik</StyledNavLink>
+export const PriceList: FC<{
+  menuState: MenuState
+  setMenuState: Dispatch<MenuState>
+}> = ({ menuState, setMenuState }) => (
+  <Wrapper $menuState={menuState}>
+    <StyledNavLink
+      to="/cennik"
+      onClick={() => setMenuState({ state: "closed" })}
+    >
+      Cennik
+    </StyledNavLink>
   </Wrapper>
 )
 
-export const Contact = () => (
-  <Wrapper>
+export const Contact: FC<{
+  menuState: MenuState
+  setMenuState: Dispatch<MenuState>
+}> = ({ menuState, setMenuState }) => (
+  <Wrapper
+    $menuState={menuState}
+    onClick={() => setMenuState({ state: "closed" })}
+  >
     <StyledNavLink to="/kontakt">Kontakt</StyledNavLink>
   </Wrapper>
 )
 
-const Wrapper = styled.li`
+const Wrapper = styled.li<{
+  $menuState: MenuState
+}>`
   list-style: none;
-  padding: 0 16px;
 
   @media ${device.tablet} {
+    display: ${({ $menuState }) =>
+      $menuState.state === "open" && $menuState.screen === "mobile"
+        ? "block"
+        : "none"};
     margin: 16px 10px;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   }
 `
 
@@ -31,7 +51,7 @@ const StyledNavLink = styled(NavLink)`
   padding: 10px 16px;
 
   &:hover {
-    background: ${({ theme }) => theme.color.secondary};
+    background-color: ${({ theme }) => theme.color.secondary};
     color: ${({ theme }) => theme.color.dark};
     border-radius: 5px;
   }

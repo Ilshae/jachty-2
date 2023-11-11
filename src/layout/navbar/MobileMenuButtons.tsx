@@ -5,52 +5,57 @@ import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import { Dispatch, FC } from "react"
 
-export const OpenMobileMenuButton: FC<{
+export const HamburgerButton: FC<{
   menuState: MenuState
   setMenuState: Dispatch<MenuState>
 }> = ({ menuState, setMenuState }) => (
-  <OpenMobileMenu
+  <OpenMenu
     $menuState={menuState}
     onClick={() => setMenuState({ state: "open", screen: "mobile" })}
   >
     <MenuIcon />
-  </OpenMobileMenu>
+  </OpenMenu>
 )
 
-export const CloseMobileMenuButton: FC<{
+export const CloseButton: FC<{
   menuState: MenuState
   setMenuState: Dispatch<MenuState>
 }> = ({ menuState, setMenuState }) => (
-  <CloseMobileMenu
+  <CloseMenu
     $menuState={menuState}
     onClick={() => setMenuState({ state: "closed" })}
   >
     <CloseIcon />
-  </CloseMobileMenu>
+  </CloseMenu>
 )
 
-const OpenMobileMenu = styled.div<{
+const OpenMenu = styled.div<{
   $menuState: MenuState
 }>`
   display: none;
   cursor: pointer;
+  justify-self: flex-end;
 
   @media ${device.tablet} {
     display: ${({ $menuState }) =>
-      $menuState.state === "open" ? "none" : "block"};
+      $menuState.state === "open" && $menuState.screen === "mobile"
+        ? "none"
+        : "block"};
   }
 `
-const CloseMobileMenu = styled.li<{
+const CloseMenu = styled.li<{
   $menuState: MenuState
 }>`
   display: none;
   cursor: pointer;
   position: absolute;
-  right: 30px;
-  top: 5px;
+  right: 16px;
+  top: 0;
 
   @media ${device.tablet} {
     display: ${({ $menuState }) =>
-      $menuState.state === "open" ? "none" : "block"};
+      $menuState.state === "open" && $menuState.screen === "mobile"
+        ? "block"
+        : "none"};
   }
 `
