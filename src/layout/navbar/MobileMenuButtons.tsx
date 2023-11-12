@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import { device } from "../../theme.ts"
-import { MenuState } from "./Navbar.tsx"
+import { device, theme } from "../../theme.ts"
 import MenuIcon from "@mui/icons-material/Menu"
 import CloseIcon from "@mui/icons-material/Close"
 import { Dispatch, FC } from "react"
+import { MenuState } from "./common.ts"
 
 export const HamburgerButton: FC<{
   menuState: MenuState
@@ -13,7 +13,7 @@ export const HamburgerButton: FC<{
     $menuState={menuState}
     onClick={() => setMenuState({ state: "open", screen: "mobile" })}
   >
-    <MenuIcon />
+    <MenuIcon sx={{ stroke: theme.color.light, strokeWidth: 1 }} />
   </OpenMenu>
 )
 
@@ -25,7 +25,7 @@ export const CloseButton: FC<{
     $menuState={menuState}
     onClick={() => setMenuState({ state: "closed" })}
   >
-    <CloseIcon />
+    <CloseIcon sx={{ stroke: theme.color.light, strokeWidth: 1 }} />
   </CloseMenu>
 )
 
@@ -35,6 +35,8 @@ const OpenMenu = styled.div<{
   display: none;
   cursor: pointer;
   justify-self: flex-end;
+  color: ${({ theme }) => theme.color.light};
+  margin-top: 5px;
 
   @media ${device.tablet} {
     display: ${({ $menuState }) =>
@@ -50,7 +52,8 @@ const CloseMenu = styled.li<{
   cursor: pointer;
   position: absolute;
   right: 16px;
-  top: 0;
+  top: 5px;
+  color: ${({ theme }) => theme.color.light};
 
   @media ${device.tablet} {
     display: ${({ $menuState }) =>

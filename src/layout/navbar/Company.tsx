@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { Link } from "react-router-dom"
+import { device } from "../../theme.ts"
 
 export const Company = () => (
   <CompanyName>
@@ -14,6 +15,10 @@ const CompanyLink = styled(Link)`
   font-size: ${({ theme }) => theme.fontSize.bigTitle};
   font-weight: 500;
   text-decoration: none;
+
+  @media ${device.laptopL} {
+    font-size: ${({ theme }) => theme.fontSize.title};
+  }
 `
 
 export default Company

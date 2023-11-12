@@ -1,9 +1,9 @@
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import YachtList from "./YachtList.tsx"
-import { MenuState } from "./Navbar.tsx"
 import styled from "styled-components"
 import { device } from "../../theme.ts"
 import { Dispatch, FC, useState } from "react"
+import { MenuState } from "./common.ts"
 
 export const YachtMenu: FC<{
   menuState: MenuState
@@ -45,6 +45,13 @@ const DesktopYachtList = styled.span`
   list-style: none;
   padding: 0 16px;
   cursor: pointer;
+  color: ${({ theme }) => theme.color.light};
+  display: inline-flex;
+  align-items: center;
+
+  @media ${device.laptopL} {
+    font-size: ${({ theme }) => theme.fontSize.regular};
+  }
 
   @media ${device.tablet} {
     display: none;
@@ -55,7 +62,7 @@ const MobileYachtList = styled.li<{
   $menuState: MenuState
 }>`
   display: none;
-  height: 60px;
+  height: ${({ theme }) => theme.navbar.height.desktop};
   list-style: none;
   margin: 16px 10px;
   text-align: center;
@@ -86,7 +93,7 @@ const MegaBox = styled.div<{
   $mobileYachtListOpen: boolean
 }>`
   position: absolute;
-  top: 60px;
+  top: ${({ theme }) => theme.navbar.height.desktop};
   left: 0;
   width: 100%;
   display: ${({ $menuState }) =>

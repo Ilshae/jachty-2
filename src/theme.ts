@@ -1,4 +1,14 @@
 export const theme = {
+  container: {
+    maxWidth: "1900px",
+    margin: {
+      desktop: "0 100px",
+      laptopL: "0 80px",
+      laptop: "0 20px",
+      tablet: "0 20px",
+      mobileM: "0 20px",
+    },
+  },
   color: {
     primary: "#0A2760",
     primary75: "#0A2760BF",
@@ -35,6 +45,11 @@ export const theme = {
     text: "#181818 0px 3px 3px,#181818 0px -3px 3px,#181818 3px 0px 3px,#181818 -3px 0px 3px",
     box: "0px 5px 5px -3px #424242",
     box2: "0px 0px 10px 0px #424242",
+  },
+  navbar: {
+    height: {
+      desktop: "60px",
+    },
   },
 }
 

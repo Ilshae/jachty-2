@@ -1,8 +1,7 @@
 import { device } from "../../theme.ts"
 import styled from "styled-components"
-import { NavLink } from "react-router-dom"
 import { Dispatch, FC } from "react"
-import { MenuState } from "./Navbar.tsx"
+import { MenuState, StyledNavLink } from "./common.ts"
 
 export const PriceList: FC<{
   menuState: MenuState
@@ -42,17 +41,5 @@ const Wrapper = styled.li<{
         : "none"};
     margin: 16px 10px;
     text-align: center;
-  }
-`
-
-const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.color.light};
-  padding: 10px 16px;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.color.secondary};
-    color: ${({ theme }) => theme.color.dark};
-    border-radius: 5px;
   }
 `

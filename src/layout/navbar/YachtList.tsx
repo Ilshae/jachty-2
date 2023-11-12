@@ -1,9 +1,8 @@
 import styled from "styled-components"
 import { device } from "../../theme.ts"
 import yachts, { Yacht } from "../../data/yachts.ts"
-import { NavLink } from "react-router-dom"
 import { Dispatch, FC } from "react"
-import { MenuState } from "./Navbar.tsx"
+import { MenuState, StyledNavLink } from "./common.ts"
 
 export const YachtList: FC<{
   setMenuState: Dispatch<MenuState>
@@ -117,6 +116,11 @@ const Header = styled.header`
   padding: 0 20px;
   white-space: nowrap;
   font-family: ${({ theme }) => theme.fontFamily.special};
+  color: ${({ theme }) => theme.color.light};
+
+  @media ${device.laptopL} {
+    font-size: ${({ theme }) => theme.fontSize.regular};
+  }
 `
 
 const List = styled.ul`
@@ -134,17 +138,9 @@ const Element = styled.li`
   margin: 16px 10px;
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.subTitle};
-`
 
-const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  color: ${({ theme }) => theme.color.light};
-  padding: 10px 16px;
-
-  &:hover {
-    background-color: ${({ theme }) => theme.color.secondary};
-    color: ${({ theme }) => theme.color.dark};
-    border-radius: 5px;
+  @media ${device.laptopL} {
+    margin: 12px 8px;
   }
 `
 

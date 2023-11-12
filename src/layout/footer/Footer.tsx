@@ -7,11 +7,12 @@ import FacebookIcon from "@mui/icons-material/Facebook"
 import PhoneIcon from "@mui/icons-material/Phone"
 import { Link } from "react-router-dom"
 import { device } from "../../theme.ts"
+import { Container } from "../../common/styles.ts"
 
 const Footer: FC = () => {
   return (
     <Background>
-      <Container>
+      <FooterContainer>
         <ContactWrapper>
           <ContactSection>
             <IconLink
@@ -55,7 +56,7 @@ const Footer: FC = () => {
             </AuthorLink>
           </CopyrightSection>
         </CopyrightWrapper>
-      </Container>
+      </FooterContainer>
     </Background>
   )
 }
@@ -81,8 +82,9 @@ const Background = styled.footer`
   justify-content: center;
 `
 
-const Container = styled.div`
+const FooterContainer = styled(Container)`
   height: 100%;
+  width: 100%;
   text-shadow: ${({ theme }) => theme.shadow.text};
   border-top: 2px solid black;
   display: flex;
@@ -93,25 +95,6 @@ const Container = styled.div`
   color: ${({ theme }) => theme.color.light};
   font-size: ${({ theme }) => theme.fontSize.subTitle};
   font-family: ${({ theme }) => theme.fontFamily.action};
-  width: 100%;
-  max-width: 1900px;
-
-  @media ${device.desktop} {
-    margin: 0 100px;
-  }
-  @media ${device.laptopL} {
-    margin: 0 80px;
-  }
-  @media ${device.laptop} {
-    font-size: ${({ theme }) => theme.fontSize.regular};
-    margin: 0 60px;
-  }
-  @media ${device.tablet} {
-    margin: 0 20px;
-  }
-  @media ${device.mobileM} {
-    margin: 0 40px;
-  }
 `
 const ContactWrapper = styled.div`
   display: flex;
