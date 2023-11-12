@@ -28,4 +28,12 @@ export const StyledNavLink = styled(NavLink)`
   @media ${device.tablet} {
     font-size: ${({ theme }) => theme.fontSize.title};
   }
+
+  @media ${device.tablet} {
+    font-size: ${({ theme }) => theme.fontSize.subTitle};
+  }
+
+  @media ${device.mobileL} {
+    font-size: ${({ theme }) => theme.fontSize.regular};
+  }
 `

@@ -86,6 +86,14 @@ const MobileYachtButton = styled.button`
   border: none;
   cursor: pointer;
   outline: inherit;
+
+  @media ${device.tablet} {
+    font-size: ${({ theme }) => theme.fontSize.title};
+  }
+
+  @media ${device.mobileL} {
+    font-size: ${({ theme }) => theme.fontSize.subTitle};
+  }
 `
 
 const MegaBox = styled.div<{

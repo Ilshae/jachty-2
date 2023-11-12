@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { device } from "../../theme.ts"
 import Company from "./Company.tsx"
 import { CloseButton, HamburgerButton } from "./MobileMenuButtons.tsx"
-import { Contact, PriceList } from "./NavLinks.tsx"
+import { Contact, PriceList } from "./PriceListAndContact.tsx"
 import YachtMenu from "./YachtMenu.tsx"
 import { MenuState } from "./common.ts"
 import { Container } from "../../common/styles.ts"
@@ -81,6 +81,15 @@ const NavLinks = styled.ul<{
     box-shadow: ${({ theme }) => theme.shadow.box};
     margin: 0;
     -webkit-overflow-scrolling: touch;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.09);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.09);
+    }
   }
 `
 

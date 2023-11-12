@@ -19,6 +19,10 @@ const CompanyLink = styled(Link)`
   @media ${device.laptopL} {
     font-size: ${({ theme }) => theme.fontSize.title};
   }
+
+  @media ${device.mobileL} {
+    font-size: ${({ theme }) => theme.fontSize.subTitle};
+  }
 `
 
 export default Company

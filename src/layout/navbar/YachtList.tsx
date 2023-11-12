@@ -121,6 +121,14 @@ const Header = styled.header`
   @media ${device.laptopL} {
     font-size: ${({ theme }) => theme.fontSize.regular};
   }
+
+  @media ${device.tablet} {
+    font-size: ${({ theme }) => theme.fontSize.subTitle};
+  }
+
+  @media ${device.mobileL} {
+    font-size: ${({ theme }) => theme.fontSize.regular};
+  }
 `
 
 const List = styled.ul`
@@ -141,6 +149,10 @@ const Element = styled.li`
 
   @media ${device.laptopL} {
     margin: 12px 8px;
+  }
+
+  @media ${device.tablet} {
+    margin: 16px 8px;
   }
 `
 

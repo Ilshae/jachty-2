@@ -8,12 +8,12 @@ export const PriceList: FC<{
   setMenuState: Dispatch<MenuState>
 }> = ({ menuState, setMenuState }) => (
   <Wrapper $menuState={menuState}>
-    <StyledNavLink
+    <StyledNavLink2
       to="/cennik"
       onClick={() => setMenuState({ state: "closed" })}
     >
       Cennik
-    </StyledNavLink>
+    </StyledNavLink2>
   </Wrapper>
 )
 
@@ -25,7 +25,7 @@ export const Contact: FC<{
     $menuState={menuState}
     onClick={() => setMenuState({ state: "closed" })}
   >
-    <StyledNavLink to="/kontakt">Kontakt</StyledNavLink>
+    <StyledNavLink2 to="/kontakt">Kontakt</StyledNavLink2>
   </Wrapper>
 )
 
@@ -41,5 +41,15 @@ const Wrapper = styled.li<{
         : "none"};
     margin: 16px 10px;
     text-align: center;
+  }
+`
+
+const StyledNavLink2 = styled(StyledNavLink)`
+  @media ${device.tablet} {
+    font-size: ${({ theme }) => theme.fontSize.title};
+  }
+
+  @media ${device.mobileL} {
+    font-size: ${({ theme }) => theme.fontSize.subTitle};
   }
 `

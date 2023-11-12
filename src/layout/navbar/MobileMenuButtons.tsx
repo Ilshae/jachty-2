@@ -51,7 +51,7 @@ const CloseMenu = styled.li<{
   display: none;
   cursor: pointer;
   position: absolute;
-  right: 16px;
+  right: 26px;
   top: 5px;
   color: ${({ theme }) => theme.color.light};
 
