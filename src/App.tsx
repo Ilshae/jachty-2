@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from "styled-components"
 import { theme, device } from "./theme.ts"
 import { createGlobalStyle } from "styled-components"
 
-const Home = lazy(() => import("./pages/Home.tsx"))
+const Home = lazy(() => import("./pages/home/Home.tsx"))
 const Navbar = lazy(() => import("./layout/navbar/Navbar.tsx"))
 const Footer = lazy(() => import("./layout/footer/Footer.tsx"))
 

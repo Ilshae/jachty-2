@@ -1,7 +1,8 @@
 import { FC } from "react"
+import Hero from "./Hero.tsx"
 
 const Home: FC = () => {
-  return <div>Home</div>
+  return <Hero />
 }
 
 export default Home

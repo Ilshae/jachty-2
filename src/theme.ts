@@ -30,6 +30,7 @@ export const theme = {
     subTitle: "20px",
     title: "24px",
     bigTitle: "30px",
+    reallyBigTitle: "48px",
   },
   screenSize: {
     mobileS: "320px",
