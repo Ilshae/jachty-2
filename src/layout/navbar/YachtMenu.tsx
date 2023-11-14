@@ -1,7 +1,7 @@
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 import YachtList from "./YachtList.tsx"
 import styled from "styled-components"
-import { device } from "../../theme.ts"
+import { device, theme } from "../../theme.ts"
 import { Dispatch, FC, useState } from "react"
 import { MenuState } from "./common.ts"
 
@@ -10,11 +10,20 @@ export const YachtMenu: FC<{
   setMenuState: Dispatch<MenuState>
 }> = ({ menuState, setMenuState }) => {
   const [mobileYachtListOpen, setMobileYachtListOpen] = useState(false)
+  const { matches } = window.matchMedia(
+    `(max-width: ${theme.screenSize.tablet})`
+  )
 
   return (
-    <Wrapper onMouseLeave={() => setMenuState({ state: "closed" })}>
+    <Wrapper
+      onMouseLeave={() => {
+        if (!matches) setMenuState({ state: "closed" })
+      }}
+    >
       <DesktopYachtList
-        onMouseOver={() => setMenuState({ state: "open", screen: "desktop" })}
+        onMouseOver={() => {
+          if (!matches) setMenuState({ state: "open", screen: "desktop" })
+        }}
       >
         Jachty Żaglowe <KeyboardArrowDownIcon />
       </DesktopYachtList>
@@ -23,6 +32,7 @@ export const YachtMenu: FC<{
           onClick={() => {
             setMobileYachtListOpen(!mobileYachtListOpen)
           }}
+          data-cy={"open-yacht-menu"}
         >
           Jachty Żaglowe
         </MobileYachtButton>

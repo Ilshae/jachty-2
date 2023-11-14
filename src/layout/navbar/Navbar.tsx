@@ -61,9 +61,6 @@ const NavLinks = styled.ul<{
   height: ${({ theme }) => theme.navbar.height.desktop};
   padding: 0;
   margin: 0;
-  // TODO: should this be here?
-  animation: fadein 0.2s;
-  right: 0;
 
   @media ${device.tablet} {
     display: ${({ $menuState }) =>

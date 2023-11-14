@@ -10,6 +10,7 @@ export const HamburgerButton: FC<{
   setMenuState: Dispatch<MenuState>
 }> = ({ menuState, setMenuState }) => (
   <OpenMenu
+    data-cy={"open-menu"}
     $menuState={menuState}
     onClick={() => setMenuState({ state: "open", screen: "mobile" })}
   >
@@ -22,6 +23,7 @@ export const CloseButton: FC<{
   setMenuState: Dispatch<MenuState>
 }> = ({ menuState, setMenuState }) => (
   <CloseMenu
+    data-cy={"close-menu"}
     $menuState={menuState}
     onClick={() => setMenuState({ state: "closed" })}
   >
