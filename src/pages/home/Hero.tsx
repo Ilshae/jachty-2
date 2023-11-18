@@ -1,7 +1,7 @@
 import { FC } from "react"
 import styled, { keyframes } from "styled-components"
-import { Link } from "react-router-dom"
 import Waves from "./Waves.tsx"
+import { Container } from "../../common/styles.ts"
 
 const Hero: FC = () => {
   return (
@@ -10,9 +10,6 @@ const Hero: FC = () => {
       <Header>
         <h1>Czartery na mazurach</h1>
         <h2>Komfortowe i szybkie jachty, życzliwa obsługa, fachowy serwis</h2>
-        <Link to="/kontakt">
-          <button>KONTAKT</button>
-        </Link>
       </Header>
       <Waves />
     </Wrapper>
@@ -52,8 +49,7 @@ const Background = styled.div`
   display: flex;
 `
 
-const Header = styled.header`
-  max-width: ${({ theme }) => theme.container.maxWidth};
+const Header = styled(Container)`
   color: ${({ theme }) => theme.color.light};
   position: absolute;
   width: 100%;
