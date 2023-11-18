@@ -1,7 +1,7 @@
 import { FC } from "react"
 import styled, { keyframes } from "styled-components"
 import Waves from "./Waves.tsx"
-import { CommonContainer } from "../../common/styles.ts"
+import { device } from "../../theme.ts"
 
 const Hero: FC = () => {
   return (
@@ -49,7 +49,9 @@ const Background = styled.div`
   display: flex;
 `
 
-const Header = styled(CommonContainer)`
+const Header = styled.header`
+  max-width: ${({ theme }) => theme.container.maxWidth};
+  margin: 0 auto;
   color: ${({ theme }) => theme.color.light};
   position: absolute;
   width: 100%;
@@ -58,18 +60,58 @@ const Header = styled(CommonContainer)`
   transform: translate(-50%, -50%);
   text-align: center;
 
+  @media ${device.desktop} {
+    padding: ${({ theme }) => theme.container.margin.desktop};
+  }
+  @media ${device.laptopL} {
+    padding: ${({ theme }) => theme.container.margin.laptopL};
+  }
+  @media ${device.laptop} {
+    padding: ${({ theme }) => theme.container.margin.laptop};
+  }
+  @media ${device.tablet} {
+    padding: ${({ theme }) => theme.container.margin.tablet};
+  }
+  @media ${device.mobileM} {
+    padding: ${({ theme }) => theme.container.margin.mobileM};
+  }
+
   h1 {
     letter-spacing: 5px;
     font-size: ${({ theme }) => theme.fontSize.reallyBigTitle};
     text-transform: uppercase;
     font-weight: normal;
     text-shadow: ${({ theme }) => theme.shadow.text};
+
+    @media ${device.laptopL} {
+      font-size: ${({ theme }) => theme.fontSize.bigTitle} !important;
+    }
+
+    @media ${device.tablet} {
+      font-size: ${({ theme }) => theme.fontSize.title} !important;
+    }
+
+    @media ${device.mobileM} {
+      font-size: ${({ theme }) => theme.fontSize.subTitle} !important;
+    }
   }
 
   h2 {
     font-size: ${({ theme }) => theme.fontSize.bigTitle};
     font-weight: normal;
     text-shadow: ${({ theme }) => theme.shadow.text};
+
+    @media ${device.laptopL} {
+      font-size: ${({ theme }) => theme.fontSize.title} !important;
+    }
+
+    @media ${device.tablet} {
+      font-size: ${({ theme }) => theme.fontSize.subTitle} !important;
+    }
+
+    @media ${device.mobileM} {
+      font-size: ${({ theme }) => theme.fontSize.regular} !important;
+    }
   }
 `
 

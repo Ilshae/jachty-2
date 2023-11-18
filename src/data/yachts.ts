@@ -258,7 +258,7 @@ const yachts: Yacht[] = [
     },
     previewGallery: [
       "antila-244-borneo/borneo1.jpg",
-      "antila-244-borneo/borneo4.jpg",
+      "antila-244-borneo/borneo5.jpg",
     ],
     gallery: [
       "antila-244-borneo/borneo1.jpg",

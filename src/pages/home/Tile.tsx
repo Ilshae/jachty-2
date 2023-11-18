@@ -7,6 +7,7 @@ import {
   Button as MUIButton,
 } from "@mui/material"
 import { Link } from "react-router-dom"
+import { device } from "../../theme.ts"
 
 const Tile: FC<Yacht> = ({ id, url, previewGallery }: Yacht) => {
   return (
@@ -46,6 +47,10 @@ const Button = styled(MUIButton)`
   border: none;
   cursor: pointer;
 
+  @media ${device.laptopL} {
+    font-size: ${({ theme }) => theme.fontSize.subTitle} !important;
+  }
+
   &:hover {
     background-color: ${({ theme }) => theme.color.secondary} !important;
     color: ${({ theme }) => theme.color.dark} !important;
@@ -74,7 +79,20 @@ const CardContent = styled(MUICardConent)`
     object-fit: cover;
     vertical-align: middle;
     border-style: none;
+
+    @media ${device.tablet} {
+      height: 300px;
+    }
+
+    @media ${device.mobileM} {
+      height: 250px;
+    }
+
+    @media ${device.mobileM} {
+      height: 200px;
+    }
   }
+
   img:hover {
     cursor: pointer;
   }
