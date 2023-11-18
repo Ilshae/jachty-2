@@ -16,7 +16,7 @@ const Yachts: FC = () => {
 
 const Container = styled(CommonContainer)`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 32px;
   row-gap: 64px;
   padding: 64px 0;

@@ -19,6 +19,8 @@ export const NavLink = styled(Link)`
   &:hover {
     background-color: ${({ theme }) => theme.color.secondary};
     border-radius: 5px;
+    font-weight: bold;
+    color: ${({ theme }) => theme.color.dark};
   }
 
   @media ${device.laptopL} {

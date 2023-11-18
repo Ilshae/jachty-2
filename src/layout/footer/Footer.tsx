@@ -80,13 +80,14 @@ const Background = styled.footer`
   background-position: center;
   display: flex;
   justify-content: center;
+  border-top: 1px solid grey;
 `
 
 const FooterContainer = styled(CommonContainer)`
   height: 100%;
   width: 100%;
   text-shadow: ${({ theme }) => theme.shadow.text};
-  border-top: 2px solid black;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,7 +101,7 @@ const ContactWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 16px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid ${({ theme }) => theme.color.light};
   width: 100%;
 
   @media ${device.tablet} {

@@ -1,13 +1,21 @@
 import { Yacht } from "../../data/yachts.ts"
 import { FC } from "react"
 import styled from "styled-components"
-import { Card as MUICard, CardContent as MUICardConent } from "@mui/material"
+import {
+  Card as MUICard,
+  CardContent as MUICardConent,
+  Button as MUIButton,
+} from "@mui/material"
 import { Link } from "react-router-dom"
 
 const Tile: FC<Yacht> = ({ id, url, previewGallery }: Yacht) => {
   return (
     <Card>
-      <CardActions>{id}</CardActions>
+      <CardActions>
+        <Link to={`/${url}`}>
+          <Button>{id}</Button>
+        </Link>
+      </CardActions>
       <CardContent>
         {previewGallery && previewGallery.length > 0 ? (
           previewGallery.map((image) => (
@@ -24,6 +32,26 @@ const Tile: FC<Yacht> = ({ id, url, previewGallery }: Yacht) => {
     </Card>
   )
 }
+
+const Button = styled(MUIButton)`
+  font-size: ${({ theme }) => theme.fontSize.title} !important;
+  font-family: ${({ theme }) => theme.fontFamily.action} !important;
+  letter-spacing: 3px;
+  padding: 16px;
+  text-transform: uppercase;
+  box-shadow: ${({ theme }) => theme.shadow.box};
+  border-radius: 5px;
+  background-color: ${({ theme }) => theme.color.primary}!important;
+  color: ${({ theme }) => theme.color.light} !important;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.secondary} !important;
+    color: ${({ theme }) => theme.color.dark} !important;
+    font-weight: bold !important;
+  }
+`
 
 const Card = styled(MUICard)`
   box-shadow: ${({ theme }) => theme.shadow.box2} !important;
