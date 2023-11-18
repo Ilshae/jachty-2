@@ -56,8 +56,8 @@ export type Yacht = {
   url: string
   technicalData: TechnicalData
   equipment: Equipment
-  previewGallery: string[]
-  gallery: string[]
+  previewGallery?: string[]
+  gallery?: string[]
   video?: string[]
   priceList: PriceListSaturday | PriceListSunday
 }
@@ -258,7 +258,7 @@ const yachts: Yacht[] = [
     },
     previewGallery: [
       "antila-244-borneo/borneo1.jpg",
-      "antila-244-borneo/sborneo4.jpg",
+      "antila-244-borneo/borneo4.jpg",
     ],
     gallery: [
       "antila-244-borneo/borneo1.jpg",
@@ -1167,7 +1167,7 @@ const yachts: Yacht[] = [
     },
     previewGallery: [
       "antila-333-przygoda/przygoda1.jpg",
-      "antila-333-przygoda/przygoda24.jpg",
+      "antila-333-przygoda/przygoda4.jpg",
     ],
     gallery: [
       "antila-333-przygoda/przygoda1.jpg",
@@ -1380,8 +1380,6 @@ const yachts: Yacht[] = [
         "komplet poduszek 8 szt",
       ],
     },
-    previewGallery: ["twister-800n-strzyga/summary/strzyga.jpg"],
-    gallery: ["twister-800n-strzyga/strzyga.jpg"],
     priceList: {
       "21.04 - 28.04": "X",
       "28.04 - 03.05": "X",

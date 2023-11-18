@@ -17,6 +17,7 @@ const Yachts: FC = () => {
 const StyledContainer = styled(Container)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  padding: 48px 0;
 `
 
 export default Yachts
