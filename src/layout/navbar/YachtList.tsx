@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { device } from "../../theme.ts"
 import yachts, { Yacht } from "../../data/yachts.ts"
 import { Dispatch, FC } from "react"
-import { MenuState, StyledNavLink } from "./common.ts"
+import { MenuState, NavLink } from "./common.ts"
 
 export const YachtList: FC<{
   setMenuState: Dispatch<MenuState>
@@ -10,13 +10,13 @@ export const YachtList: FC<{
   const getYachtsLinks = (yachts: Yacht[]) =>
     yachts.map((yacht: Yacht) => (
       <Element key={yacht.id}>
-        <StyledNavLink
+        <NavLink
           key={yacht.id}
           to={yacht.url}
           onClick={() => setMenuState({ state: "closed" })}
         >
           {yacht.id}
-        </StyledNavLink>
+        </NavLink>
       </Element>
     ))
 

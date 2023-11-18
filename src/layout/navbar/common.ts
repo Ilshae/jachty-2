@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { NavLink as Link } from "react-router-dom"
 import styled from "styled-components"
 import { device } from "../../theme.ts"
 
@@ -11,7 +11,7 @@ type ClosedMenu = {
 }
 export type MenuState = OpenMenu | ClosedMenu
 
-export const StyledNavLink = styled(NavLink)`
+export const NavLink = styled(Link)`
   text-decoration: none;
   color: ${({ theme }) => theme.color.light};
   padding: 10px 16px;

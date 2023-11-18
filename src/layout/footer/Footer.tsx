@@ -5,9 +5,9 @@ import LocationOnIcon from "@mui/icons-material/LocationOn"
 import EmailIcon from "@mui/icons-material/Email"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import PhoneIcon from "@mui/icons-material/Phone"
-import { Link } from "react-router-dom"
+import { Link as RRDLink } from "react-router-dom"
 import { device } from "../../theme.ts"
-import { Container } from "../../common/styles.ts"
+import { CommonContainer } from "../../common/styles.ts"
 
 const Footer: FC = () => {
   return (
@@ -67,10 +67,10 @@ const IconLink: FC<{ href: string; icon: ReactNode; text: string }> = ({
   text,
 }) => {
   return (
-    <StyledLink href={href} rel="nofollow noopener noreferrer" target="_blank">
+    <Link href={href} rel="nofollow noopener noreferrer" target="_blank">
       {icon}
       <span style={{ marginLeft: "8px" }}>{text}</span>
-    </StyledLink>
+    </Link>
   )
 }
 
@@ -82,7 +82,7 @@ const Background = styled.footer`
   justify-content: center;
 `
 
-const FooterContainer = styled(Container)`
+const FooterContainer = styled(CommonContainer)`
   height: 100%;
   width: 100%;
   text-shadow: ${({ theme }) => theme.shadow.text};
@@ -131,7 +131,7 @@ const ContactSection = styled.div`
   }
 `
 
-const StyledLink = styled.a`
+const Link = styled.a`
   text-decoration: none !important;
   color: inherit;
   display: inline-flex;
@@ -176,7 +176,7 @@ const CopyrightSection = styled.div`
   }
 `
 
-const AuthorLink = styled(StyledLink)`
+const AuthorLink = styled(Link)`
   font-family: ${({ theme }) => theme.fontFamily.special};
 
   @media ${device.tablet} {
@@ -184,7 +184,7 @@ const AuthorLink = styled(StyledLink)`
   }
 `
 
-const CompanyLink = styled(Link)`
+const CompanyLink = styled(RRDLink)`
   text-decoration: none !important;
   color: inherit;
   display: flex;

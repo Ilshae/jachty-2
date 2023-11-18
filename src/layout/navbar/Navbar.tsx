@@ -6,7 +6,7 @@ import { CloseButton, HamburgerButton } from "./MobileMenuButtons.tsx"
 import { Contact, PriceList } from "./PriceListAndContact.tsx"
 import YachtMenu from "./YachtMenu.tsx"
 import { MenuState } from "./common.ts"
-import { Container } from "../../common/styles.ts"
+import { CommonContainer } from "../../common/styles.ts"
 
 const Navbar = () => {
   const [menuState, setMenuState] = useState<MenuState>({ state: "closed" })
@@ -47,7 +47,7 @@ const Nav = styled.nav`
   }
 `
 
-const NavContainer = styled(Container)`
+const NavContainer = styled(CommonContainer)`
   position: relative;
   padding: 0 16px;
   display: flex;

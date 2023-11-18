@@ -1,19 +1,16 @@
 import { device } from "../../theme.ts"
 import styled from "styled-components"
 import { Dispatch, FC } from "react"
-import { MenuState, StyledNavLink } from "./common.ts"
+import { MenuState, NavLink as Link } from "./common.ts"
 
 export const PriceList: FC<{
   menuState: MenuState
   setMenuState: Dispatch<MenuState>
 }> = ({ menuState, setMenuState }) => (
   <Wrapper $menuState={menuState}>
-    <StyledNavLink2
-      to="/cennik"
-      onClick={() => setMenuState({ state: "closed" })}
-    >
+    <NavLink to="/cennik" onClick={() => setMenuState({ state: "closed" })}>
       Cennik
-    </StyledNavLink2>
+    </NavLink>
   </Wrapper>
 )
 
@@ -25,7 +22,7 @@ export const Contact: FC<{
     $menuState={menuState}
     onClick={() => setMenuState({ state: "closed" })}
   >
-    <StyledNavLink2 to="/kontakt">Kontakt</StyledNavLink2>
+    <NavLink to="/kontakt">Kontakt</NavLink>
   </Wrapper>
 )
 
@@ -44,7 +41,7 @@ const Wrapper = styled.li<{
   }
 `
 
-const StyledNavLink2 = styled(StyledNavLink)`
+const NavLink = styled(Link)`
   @media ${device.tablet} {
     font-size: ${({ theme }) => theme.fontSize.title};
   }

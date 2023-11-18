@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { device } from "../theme.ts"
 
-export const Container = styled.div`
+export const CommonContainer = styled.div`
   max-width: ${({ theme }) => theme.container.maxWidth};
   margin: 0 auto;
 

@@ -1,14 +1,14 @@
 import { Yacht } from "../../data/yachts.ts"
 import { FC } from "react"
 import styled from "styled-components"
-import { Card, CardContent } from "@mui/material"
+import { Card as MUICard, CardContent as MUICardConent } from "@mui/material"
 import { Link } from "react-router-dom"
 
 const Tile: FC<Yacht> = ({ id, url, previewGallery }: Yacht) => {
   return (
-    <StyledCard>
-      <StyledCardActions>{id}</StyledCardActions>
-      <StyledCardContent>
+    <Card>
+      <CardActions>{id}</CardActions>
+      <CardContent>
         {previewGallery && previewGallery.length > 0 ? (
           previewGallery.map((image) => (
             <Link to={`/${url}`}>
@@ -20,23 +20,24 @@ const Tile: FC<Yacht> = ({ id, url, previewGallery }: Yacht) => {
             <img src={`/assets/backgrounds/noGallery.jpg`} alt={id} />
           </Link>
         )}
-      </StyledCardContent>
-    </StyledCard>
+      </CardContent>
+    </Card>
   )
 }
 
-const StyledCard = styled(Card)`
-  box-shadow: ${({ theme }) => theme.shadow.box2};
+const Card = styled(MUICard)`
+  box-shadow: ${({ theme }) => theme.shadow.box2} !important;
   width: 100%;
   border-radius: 5px;
   background-color: ${({ theme }) => theme.shadow.light};
 `
 
-const StyledCardActions = styled(CardContent)`
+const CardActions = styled(MUICardConent)`
   text-align: center;
+  padding: 16px;
 `
 
-const StyledCardContent = styled(CardContent)`
+const CardContent = styled(MUICardConent)`
   padding: 0 !important;
 
   img {

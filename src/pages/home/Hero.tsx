@@ -1,7 +1,7 @@
 import { FC } from "react"
 import styled, { keyframes } from "styled-components"
 import Waves from "./Waves.tsx"
-import { Container } from "../../common/styles.ts"
+import { CommonContainer } from "../../common/styles.ts"
 
 const Hero: FC = () => {
   return (
@@ -49,7 +49,7 @@ const Background = styled.div`
   display: flex;
 `
 
-const Header = styled(Container)`
+const Header = styled(CommonContainer)`
   color: ${({ theme }) => theme.color.light};
   position: absolute;
   width: 100%;
