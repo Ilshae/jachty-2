@@ -8,8 +8,14 @@ const Hero: FC = () => {
     <Wrapper>
       <Background />
       <Header>
-        <h1>Czartery na mazurach</h1>
-        <h2>Komfortowe i szybkie jachty, życzliwa obsługa, fachowy serwis</h2>
+        <h1>
+          <span>Czartery na mazurach</span>
+        </h1>
+        <h2>
+          <span>
+            Komfortowe i szybkie jachty, życzliwa obsługa, fachowy serwis
+          </span>
+        </h2>
       </Header>
       <Waves />
     </Wrapper>
@@ -83,6 +89,11 @@ const Header = styled.header`
     font-weight: normal;
     text-shadow: ${({ theme }) => theme.shadow.text};
 
+    span {
+      background-color: #00000040;
+      padding: 5px;
+    }
+
     @media ${device.laptopL} {
       font-size: ${({ theme }) => theme.fontSize.bigTitle} !important;
     }
@@ -100,6 +111,11 @@ const Header = styled.header`
     font-size: ${({ theme }) => theme.fontSize.bigTitle};
     font-weight: normal;
     text-shadow: ${({ theme }) => theme.shadow.text};
+
+    span {
+      background-color: #00000040;
+      padding: 5px;
+    }
 
     @media ${device.laptopL} {
       font-size: ${({ theme }) => theme.fontSize.title} !important;
