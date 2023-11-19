@@ -1,73 +1,52 @@
 import { Yacht } from "../../data/yachts.ts"
 import { FC } from "react"
 import styled from "styled-components"
-import {
-  Card as MUICard,
-  CardContent as MUICardConent,
-  Button as MUIButton,
-} from "@mui/material"
-import { Link } from "react-router-dom"
+import { Card as MUICard, CardContent as MUICardConent } from "@mui/material"
+import { Link as RRDLink } from "react-router-dom"
 import { device } from "../../theme.ts"
 
 const Tile: FC<Yacht> = ({ id, url, previewGallery }: Yacht) => {
   return (
     <Card>
       <CardActions>
-        <Link to={`/${url}`}>
-          <Button>{id}</Button>
-        </Link>
+        <Link to={`/${url}`}>{id}</Link>
       </CardActions>
       <CardContent>
         {previewGallery && previewGallery.length > 0 ? (
           previewGallery.map((image) => (
-            <Link key={image} to={`/${url}`}>
+            <RRDLink key={image} to={`/${url}`}>
               <img src={`/assets/yachts/${image}`} alt={id} />
-            </Link>
+            </RRDLink>
           ))
         ) : (
-          <Link to={`/${url}`}>
+          <RRDLink to={`/${url}`}>
             <img src={`/assets/backgrounds/noGallery.jpg`} alt={id} />
-          </Link>
+          </RRDLink>
         )}
       </CardContent>
     </Card>
   )
 }
 
-const Button = styled(MUIButton)`
-  font-size: ${({ theme }) => theme.fontSize.title} !important;
-  font-family: ${({ theme }) => theme.fontFamily.action} !important;
-  letter-spacing: 3px;
-  padding: 16px;
-  text-transform: uppercase;
-  box-shadow: ${({ theme }) => theme.shadow.box};
-  border-radius: 5px;
-  background-color: ${({ theme }) => theme.color.primary}!important;
-  color: ${({ theme }) => theme.color.light} !important;
-  border: none;
-  cursor: pointer;
-
-  @media ${device.laptopL} {
-    font-size: ${({ theme }) => theme.fontSize.subTitle} !important;
-  }
-
-  &:hover {
-    background-color: ${({ theme }) => theme.color.secondary} !important;
-    color: ${({ theme }) => theme.color.dark} !important;
-    font-weight: bold !important;
-  }
-`
-
 const Card = styled(MUICard)`
-  box-shadow: ${({ theme }) => theme.shadow.box2} !important;
+  box-shadow: ${({ theme }) => theme.shadow.box} !important;
   width: 100%;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.shadow.light};
+  background-color: ${({ theme }) => theme.color.primary20} !important;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.color.secondary90} !important;
+  }
+
+  &:nth-of-type(12) {
+    height: 410px;
+  }
 `
 
 const CardActions = styled(MUICardConent)`
   text-align: center;
-  padding: 16px;
+  padding: 0 !important;
+  height: 60px;
 `
 
 const CardContent = styled(MUICardConent)`
@@ -95,6 +74,23 @@ const CardContent = styled(MUICardConent)`
 
   img:hover {
     cursor: pointer;
+  }
+`
+
+const Link = styled(RRDLink)`
+  display: block;
+  font-size: ${({ theme }) => theme.fontSize.title};
+  font-family: ${({ theme }) => theme.fontFamily.action};
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: ${({ theme }) => theme.color.dark};
+  width: 100%;
+  text-decoration: none;
+  padding: 16px;
+  font-weight: 600;
+
+  @media ${device.laptopL} {
+    font-size: ${({ theme }) => theme.fontSize.subTitle} !important;
   }
 `
 

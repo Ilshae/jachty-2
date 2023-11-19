@@ -1,6 +1,6 @@
 import { FC, lazy, Suspense } from "react"
 import { Route, Routes } from "react-router-dom"
-import styled, { ThemeProvider } from "styled-components"
+import { ThemeProvider } from "styled-components"
 import { theme, device } from "./theme.ts"
 import { createGlobalStyle } from "styled-components"
 
@@ -19,21 +19,15 @@ const App: FC = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Navbar />
-        <Container>
-          <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-              errorElement={<ErrorBoundary />}
-            />
-            <Route
-              path="/kontakt"
-              element={<Contact />}
-              errorElement={<ErrorBoundary />}
-            />
-          </Routes>
-          <Footer />
-        </Container>
+        <Routes>
+          <Route path="/" element={<Home />} errorElement={<ErrorBoundary />} />
+          <Route
+            path="/kontakt"
+            element={<Contact />}
+            errorElement={<ErrorBoundary />}
+          />
+        </Routes>
+        <Footer />
       </ThemeProvider>
     </Suspense>
   )
@@ -51,6 +45,7 @@ const GlobalStyle = createGlobalStyle`
     background-position:
             0 0,
             150px 150px;
+    animation: fadein 0.2s;
 
     @media ${device.tablet} {
       background-size: 300px 300px;
@@ -60,10 +55,6 @@ const GlobalStyle = createGlobalStyle`
     }
 
   }
-`
-
-const Container = styled.div`
-  height: 3000px;
 `
 
 export default App

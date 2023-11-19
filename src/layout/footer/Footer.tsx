@@ -69,7 +69,7 @@ const IconLink: FC<{ href: string; icon: ReactNode; text: string }> = ({
   return (
     <Link href={href} rel="nofollow noopener noreferrer" target="_blank">
       {icon}
-      <span style={{ marginLeft: "8px" }}>{text}</span>
+      <Text>{text}</Text>
     </Link>
   )
 }
@@ -137,6 +137,7 @@ const Link = styled.a`
   color: inherit;
   display: inline-flex;
   align-items: center;
+  text-transform: uppercase;
 
   &:hover {
     color: ${({ theme }) => theme.color.secondary};
@@ -153,6 +154,10 @@ const Link = styled.a`
   @media ${device.tablet} {
     margin: 16px 0;
   }
+`
+
+const Text = styled.span`
+  margin-left: 8px;
 `
 
 const CopyrightWrapper = styled.div`

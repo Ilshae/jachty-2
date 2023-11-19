@@ -44,9 +44,11 @@ const float = keyframes`
 `
 
 const Background = styled.div`
-  width: 100%;
   height: 100%;
-  background-image: url("../../../public/assets/backgrounds/hero.jpg");
+  width: 100%;
+  min-height: 300px;
+  max-height: 500px;
+  background-image: url("/assets/backgrounds/hero.jpg");
   background-size: cover;
   background-position: bottom;
   background-attachment: scroll;

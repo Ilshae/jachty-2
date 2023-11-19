@@ -16,6 +16,7 @@ export const theme = {
     primary10: "#0A276010",
     secondary: "#e3ab4f",
     secondary60: "#e3ab4f60",
+    secondary90: "#e3ab4f90",
     light: "#fff",
     light50: "#ffffff50",
     dark: "#020203",
@@ -26,6 +27,7 @@ export const theme = {
     special: "'Courgette', cursive",
   },
   fontSize: {
+    small: "14px",
     regular: "16px",
     subTitle: "20px",
     title: "24px",
