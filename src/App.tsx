@@ -1,25 +1,41 @@
-import { FC, lazy } from "react"
+import { FC, lazy, Suspense } from "react"
 import { Route, Routes } from "react-router-dom"
 import styled, { ThemeProvider } from "styled-components"
 import { theme, device } from "./theme.ts"
 import { createGlobalStyle } from "styled-components"
 
-const Home = lazy(() => import("./pages/home/Home.tsx"))
+import ErrorBoundary from "./common/ErrorBoundary.tsx"
+import Loading from "./common/Loading.tsx"
+
 const Navbar = lazy(() => import("./layout/navbar/Navbar.tsx"))
 const Footer = lazy(() => import("./layout/footer/Footer.tsx"))
 
+const Home = lazy(() => import("./pages/home/Home.tsx"))
+const Contact = lazy(() => import("./pages/contact/Contact.tsx"))
+
 const App: FC = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Navbar />
-      <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-        <Footer />
-      </Container>
-    </ThemeProvider>
+    <Suspense fallback={<Loading />}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Navbar />
+        <Container>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+              errorElement={<ErrorBoundary />}
+            />
+            <Route
+              path="/kontakt"
+              element={<Contact />}
+              errorElement={<ErrorBoundary />}
+            />
+          </Routes>
+          <Footer />
+        </Container>
+      </ThemeProvider>
+    </Suspense>
   )
 }
 

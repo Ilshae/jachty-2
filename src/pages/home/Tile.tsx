@@ -20,7 +20,7 @@ const Tile: FC<Yacht> = ({ id, url, previewGallery }: Yacht) => {
       <CardContent>
         {previewGallery && previewGallery.length > 0 ? (
           previewGallery.map((image) => (
-            <Link to={`/${url}`}>
+            <Link key={image} to={`/${url}`}>
               <img src={`/assets/yachts/${image}`} alt={id} />
             </Link>
           ))
