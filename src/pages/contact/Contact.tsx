@@ -10,37 +10,40 @@ import { device } from "../../theme.ts"
 
 const Contact = () => {
   return (
-    <Container>
-      <Section>
-        <h3>Możesz do nas napisać lub zadzwonić</h3>
-        <IconLink
-          href={`mailto:${str.email}`}
-          icon={<EmailIcon />}
-          text={str.email}
-        />
-        <IconLink
-          href={`tel:${str.phone2}`}
-          icon={<PhoneIcon />}
-          text={str.phone}
-        />
-      </Section>
-      <Section>
-        <h3>Jesteśmy na Facebooku i Messengerze</h3>
-        <IconLink
-          href={`https://www.${str.fb}`}
-          icon={<FacebookIcon />}
-          text={str.fb}
-        />
-      </Section>
-      <Section>
-        <h3>Gdzie ta keja, a przy nie jacht?</h3>
-        <IconLink
-          href={str.address_url}
-          icon={<LocationOnIcon />}
-          text={str.address}
-        />
-      </Section>
-    </Container>
+    <>
+      <Container>
+        <Section>
+          <h3>Możesz do nas napisać lub zadzwonić</h3>
+          <IconLink
+            href={`mailto:${str.email}`}
+            icon={<EmailIcon />}
+            text={str.email}
+          />
+          <IconLink
+            href={`tel:${str.phone2}`}
+            icon={<PhoneIcon />}
+            text={str.phone}
+          />
+        </Section>
+        <Section>
+          <h3>Jesteśmy na Facebooku i Messengerze</h3>
+          <IconLink
+            href={`https://www.${str.fb}`}
+            icon={<FacebookIcon />}
+            text={str.fb}
+          />
+        </Section>
+        <Section>
+          <h3>Gdzie ta keja, a przy nie jacht?</h3>
+          <IconLink
+            href={str.address_url}
+            icon={<LocationOnIcon />}
+            text={str.address}
+          />
+        </Section>
+      </Container>
+      <Iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d44629.01965325222!2d21.770680197903015!3d53.99347556531054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x846d550c071fa0d3!2sJachty%20Pruszy%C5%84ski!5e0!3m2!1spl!2spl!4v1611162386444!5m2!1spl!2spl" />
+    </>
   )
 }
 
@@ -109,6 +112,26 @@ const Link = styled.a`
 
 const Text = styled.span`
   margin-left: 8px;
+`
+
+const Iframe = styled.iframe`
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin-bottom: -7px;
+  height: 600px;
+
+  @media ${device.desktop} {
+    height: 600px;
+  }
+
+  @media ${device.laptopL} {
+    height: 500px;
+  }
+
+  @media ${device.laptop} {
+    height: 400px;
+  }
 `
 
 export default Contact

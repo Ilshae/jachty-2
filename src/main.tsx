@@ -15,3 +15,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
   </React.StrictMode>
 )
+
+// TODO:
+// - NavLink nie podświetla nawigacji
+// - Footer powinno przyklejać się do dółu strony
+// - brzydkie zdjęcie "Zdjecia dostępne wkrótce"
