@@ -32,10 +32,10 @@ const Card = styled(MUICard)`
   box-shadow: ${({ theme }) => theme.shadow.box} !important;
   width: 100%;
   border-radius: 5px;
-  background-color: ${({ theme }) => theme.color.primary20} !important;
+  background-color: ${({ theme }) => theme.color.primaryLighter} !important;
 
   &:hover {
-    background-color: ${({ theme }) => theme.color.secondary90} !important;
+    background-color: ${({ theme }) => theme.color.secondary} !important;
   }
 
   &:nth-of-type(12) {
@@ -46,7 +46,6 @@ const Card = styled(MUICard)`
 const CardActions = styled(MUICardConent)`
   text-align: center;
   padding: 0 !important;
-  height: 60px;
 `
 
 const CardContent = styled(MUICardConent)`

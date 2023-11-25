@@ -6,6 +6,7 @@ import EmailIcon from "@mui/icons-material/Email"
 import PhoneIcon from "@mui/icons-material/Phone"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import LocationOnIcon from "@mui/icons-material/LocationOn"
+import { device } from "../../theme.ts"
 
 const Contact = () => {
   return (
@@ -62,8 +63,11 @@ const Container = styled(CommonContainer)`
   display: flex;
   padding: 32px 0;
   text-align: center;
-  display: flex;
   justify-content: center;
+
+  @media ${device.laptop} {
+    flex-direction: column;
+  }
 `
 
 const Section = styled.section`
@@ -71,6 +75,16 @@ const Section = styled.section`
 
   h3 {
     font-size: ${({ theme }) => theme.fontSize.subTitle};
+  }
+
+  @media ${device.laptop} {
+    &:nth-of-type(1) {
+      padding: 0 0 16px 0;
+    }
+
+    &:nth-of-type(2) {
+      padding: 0 0 16px 0;
+    }
   }
 `
 
@@ -85,7 +99,7 @@ const Link = styled.a`
   text-transform: uppercase;
   font-family: ${({ theme }) => theme.fontFamily.action};
   font-size: ${({ theme }) => theme.fontSize.regular} !important;
-  background-color: ${({ theme }) => theme.color.primary20};
+  background-color: ${({ theme }) => theme.color.primaryLighter};
   margin: 16px 0;
 
   &:hover {
