@@ -11,6 +11,7 @@ const Navbar = lazy(() => import("./layout/navbar/Navbar.tsx"))
 const Footer = lazy(() => import("./layout/footer/Footer.tsx"))
 
 const Home = lazy(() => import("./pages/home/Home.tsx"))
+const PriceList = lazy(() => import("./pages/priceList/PriceList.tsx"))
 const Contact = lazy(() => import("./pages/contact/Contact.tsx"))
 
 const App: FC = () => {
@@ -24,6 +25,11 @@ const App: FC = () => {
           <Route
             path="/kontakt"
             element={<Contact />}
+            errorElement={<ErrorBoundary />}
+          />
+          <Route
+            path="/cennik"
+            element={<PriceList />}
             errorElement={<ErrorBoundary />}
           />
         </Routes>

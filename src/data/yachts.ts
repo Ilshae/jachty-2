@@ -21,7 +21,7 @@ type Equipment = {
   other?: string[]
 }
 
-type PriceListSaturday = {
+export type PriceListSaturday = {
   "21.04 - 28.04": string
   "28.04 - 03.05": string
   "03.05 - 27.05": string
@@ -36,7 +36,7 @@ type PriceListSaturday = {
   "02.09 - 01.10": string
 }
 
-type PriceListSunday = {
+export type PriceListSunday = {
   "21.04 - 28.04": string
   "28.04 - 03.05": string
   "03.05 - 28.05": string
@@ -1396,5 +1396,54 @@ const yachts: Yacht[] = [
     },
   },
 ]
+
+export const saturdayDates: string[] = [
+  "21.04 - 28.04",
+  "28.04 - 03.05",
+  "03.05 - 27.05",
+  "27.05 - 03.06",
+  "03.06 - 10.06",
+  "10.06 - 24.06",
+  "24.06 - 01.07",
+  "01.07 - 08.07",
+  "08.07 - 19.08",
+  "19.08 - 26.08",
+  "26.08 - 02.09",
+  "02.09 - 01.10",
+]
+
+export const sundayDates: string[] = [
+  "21.04 - 28.04",
+  "28.04 - 03.05",
+  "03.05 - 28.05",
+  "28.05 - 04.06",
+  "04.06 - 11.06",
+  "11.06 - 25.06",
+  "25.06 - 02.07",
+  "02.07 - 09.07",
+  "09.07 - 20.08",
+  "20.08 - 27.08",
+  "27.08 - 03.09",
+  "03.09 - 01.10",
+]
+
+export const saturdayYachts: Yacht[] = yachts.filter(
+  (y) =>
+    y.id === "Antila 267 Biały Wilk" ||
+    y.id === "Antila 27 Skellige" ||
+    y.id === "Twister 800N Harpia" ||
+    y.id === "Antila 26CC Solaris" ||
+    y.id === "Phobos 25 Saskia" ||
+    y.id === "Antila 26CC Driada" ||
+    y.id === "Antila 27 Aldonika" ||
+    y.id === "Antila 28.2 Galapagos"
+)
+
+export const sundayYachts: Yacht[] = yachts.filter(
+  (y) =>
+    y.id === "Antila 24.4 Borneo" ||
+    y.id === "Antila 33.3 Przygoda" ||
+    y.id === "Aquatic 25T Morrigan"
+)
 
 export default yachts
