@@ -19,10 +19,20 @@ const Section: FC<SectionType> = ({ name, description }) => (
 )
 
 const StyledSection = styled.section`
+  padding-bottom: 24px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
   h4 {
     font-size: ${({ theme }) => theme.fontSize.subTitle};
     font-weight: 400;
     margin: 8px 0;
+  }
+
+  li {
+    margin: 4px 0;
   }
 `
 
