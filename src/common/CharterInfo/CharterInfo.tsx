@@ -1,6 +1,7 @@
 import { FC } from "react"
 import styled from "styled-components"
-import { SectionType, charterInfoSections } from "./CharterInfoSections.tsx"
+import charterInfoSections from "./CharterInfoSections.tsx"
+import { SectionType } from "../types.ts"
 
 const CharterInfo = () => (
   <>

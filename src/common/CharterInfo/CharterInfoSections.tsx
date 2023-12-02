@@ -1,16 +1,11 @@
-import { ReactNode } from "react"
 import {
-  GeneralDescription,
-  DiscountDescription,
-  ReservationDescription,
   AdditionalPricesDescription,
   DcoumentsDescription,
+  DiscountDescription,
+  GeneralDescription,
+  ReservationDescription,
 } from "./CharterInfoDescriptions.tsx"
-
-export type SectionType = {
-  name: string
-  description: string | ReactNode
-}
+import { SectionType } from "../types.ts"
 
 export const charterInfoSections: SectionType[] = [
   {
@@ -34,3 +29,5 @@ export const charterInfoSections: SectionType[] = [
     description: <AdditionalPricesDescription />,
   },
 ]
+
+export default charterInfoSections

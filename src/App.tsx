@@ -13,6 +13,7 @@ const Footer = lazy(() => import("./layout/footer/Footer.tsx"))
 const Home = lazy(() => import("./pages/home/Home.tsx"))
 const PriceList = lazy(() => import("./pages/priceList/PriceList.tsx"))
 const Contact = lazy(() => import("./pages/contact/Contact.tsx"))
+const Yacht = lazy(() => import("./pages/yacht/Yacht.tsx"))
 
 const App: FC = () => {
   return (
@@ -32,6 +33,7 @@ const App: FC = () => {
             element={<PriceList />}
             errorElement={<ErrorBoundary />}
           />
+          <Route path="/:url" element={<Yacht />} />
         </Routes>
         <Footer />
       </ThemeProvider>
