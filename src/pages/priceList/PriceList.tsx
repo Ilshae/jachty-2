@@ -2,18 +2,16 @@ import { CommonContainer } from "../../common/styles.ts"
 import styled from "styled-components"
 import { PriceListTable } from "./PriceListTable.tsx"
 import { WeekendDay } from "./enums.ts"
-import CharterInfo from "../../common/CharterInfo.tsx"
+import CharterInfo from "../../common/CharterInfo/CharterInfo.tsx"
 
 const PriceList = () => {
   return (
     <Container>
       <VerticalScroll>
         <Section>
-          <h3>Sobotnie zmiany załóg:</h3>
           <PriceListTable weekendDay={WeekendDay.SATURDAY} />
         </Section>
         <Section>
-          <h3>Niedzielne zmiany załóg:</h3>
           <PriceListTable weekendDay={WeekendDay.SUNDAY} />
         </Section>
       </VerticalScroll>
@@ -34,6 +32,18 @@ const PriceList = () => {
 const Container = styled(CommonContainer)`
   background-color: ${({ theme }) => theme.color.light};
   padding: 32px 0;
+
+  h3 {
+    font-size: ${({ theme }) => theme.fontSize.title};
+    margin: 12px 0;
+    width: 100%;
+  }
+
+  h4 {
+    font-size: ${({ theme }) => theme.fontSize.subTitle};
+    font-weight: 400;
+    margin: 8px 0;
+  }
 `
 
 const VerticalScroll = styled.div`
@@ -43,10 +53,6 @@ const VerticalScroll = styled.div`
 const Section = styled.section`
   &:nth-of-type(1) {
     padding-bottom: 32px;
-  }
-
-  h3 {
-    font-size: ${({ theme }) => theme.fontSize.subTitle};
   }
 `
 

@@ -13,6 +13,11 @@ import { WeekendDay } from "./enums.ts"
 export const PriceListTable: FC<{ weekendDay: WeekendDay }> = ({
   weekendDay,
 }) => {
+  const tHeadTitle =
+    weekendDay === WeekendDay.SATURDAY
+      ? "Sobotnie zmiany załóg"
+      : "Niedzielne zmiany załóg"
+
   const tHead =
     weekendDay === WeekendDay.SATURDAY
       ? saturdayDates.map((date) => <th key={date}>{date}</th>)
@@ -27,6 +32,12 @@ export const PriceListTable: FC<{ weekendDay: WeekendDay }> = ({
     <Table>
       <thead>
         <tr>
+          <th>{tHeadTitle}</th>
+          <FillerTh />
+        </tr>
+      </thead>
+      <thead>
+        <tr>
           <th>Jacht</th>
           {tHead}
         </tr>
@@ -35,10 +46,20 @@ export const PriceListTable: FC<{ weekendDay: WeekendDay }> = ({
     </Table>
   )
 }
+
+const FillerTh: FC = () => {
+  const ths = []
+  for (let i = 0; i < 12; i++) {
+    ths.push(<th />)
+  }
+  return ths
+}
+
 const Table = styled.table`
   border: 3px solid ${({ theme }) => theme.color.primary};
   font-weight: bold;
   border-spacing: 0;
+  width: 100%;
 
   th {
     letter-spacing: 0;
