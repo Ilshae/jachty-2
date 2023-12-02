@@ -4,6 +4,7 @@ import {
   DiscountDescription,
   ReservationDescription,
   AdditionalPricesDescription,
+  DcoumentsDescription,
 } from "./CharterInfoDescriptions.tsx"
 
 export type SectionType = {
@@ -12,6 +13,10 @@ export type SectionType = {
 }
 
 export const charterInfoSections: SectionType[] = [
+  {
+    name: "Dokumenty do pobrania",
+    description: <DcoumentsDescription />,
+  },
   {
     name: "Ogólne",
     description: <GeneralDescription />,

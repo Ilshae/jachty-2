@@ -17,6 +17,7 @@ describe("<PriceList />", () => {
     cy.contains("Antila 28.2 Galapagos")
     // cy.contains("Twister 800N Strzyga")
 
+    cy.contains("umowa-najmu.pdf")
     cy.contains("Armator zastrzega sobie prawo do zmian w cenniku.")
     cy.contains("5% dla stałych klientów.")
     cy.contains(

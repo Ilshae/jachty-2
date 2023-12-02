@@ -1,3 +1,25 @@
+import styled from "styled-components"
+
+export const DcoumentsDescription = () => (
+  <ul>
+    <li>
+      <Link href={"/assets/pdf/umowa-najmu.pdf"} target="_blank">
+        umowa-najmu.pdf
+      </Link>
+    </li>
+    <li>
+      <Link
+        href={
+          "/assets/pdf/klauzula-informacyjna-o-ochronie-danych-osobowych.pdf"
+        }
+        target="_blank"
+      >
+        klauzula-informacyjna-o-ochronie-danych-osobowych.pdf
+      </Link>
+    </li>
+  </ul>
+)
+
 export const GeneralDescription = () => (
   <ul>
     <li>Armator zastrzega sobie prawo do zmian w cenniku.</li>
@@ -71,3 +93,7 @@ export const AdditionalPricesDescription = () => (
     <li>Czarter na trzy doby cena wzrasta o 30%.</li>
   </ul>
 )
+
+const Link = styled.a`
+  color: inherit;!important;
+`
