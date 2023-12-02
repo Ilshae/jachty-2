@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom"
 import yachts from "../../data/yachts.ts"
 import { CommonContainer } from "../../common/styles.ts"
 import styled from "styled-components"
-import yachtSections from "./YachtSections.tsx"
 import { FC } from "react"
 import { SectionType } from "../../common/types.ts"
+import yachtSections from "./yachtSections.tsx"
 
 const Yacht = () => {
   const { url } = useParams()
@@ -18,7 +18,7 @@ const Yacht = () => {
   return (
     <Container>
       <h1>{id}</h1>
-      {yachtSections.map(({ name, description }) => (
+      {yachtSections(yacht).map(({ name, description }) => (
         <Section name={name} description={description} />
       ))}
     </Container>
@@ -27,7 +27,7 @@ const Yacht = () => {
 
 const Section: FC<SectionType> = ({ name, description }) => (
   <StyledSection>
-    <h4>{name}</h4>
+    <h3>{name}</h3>
     {description}
   </StyledSection>
 )
@@ -48,6 +48,12 @@ const StyledSection = styled.section`
 
   &:last-child {
     padding-bottom: 0;
+  }
+
+  h3 {
+    font-size: ${({ theme }) => theme.fontSize.title};
+    margin: 12px 0;
+    width: 100%;
   }
 
   h4 {

@@ -19,7 +19,7 @@ export const theme = {
     secondary90: "#e3ab4f90",
     primaryLighter: "#cedded",
     light: "#fff",
-    light50: "#ffffff50",
+    light70: "#ffffff70",
     dark: "#020203",
   },
   fontFamily: {

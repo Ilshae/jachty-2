@@ -1,24 +1,84 @@
 type TechnicalData = {
-  year: string
-  length: string
-  width: string
-  height: string
-  people: string
-  engine: string
-  depth: string
-  mass: string
-  balast: string
-  sails: string
-  keelType: string
-  keelWeight: string
-  stere: string
+  year: {
+    label: string
+    value: string
+  }
+  length: {
+    label: string
+    value: string
+  }
+  width: {
+    label: string
+    value: string
+  }
+  height: {
+    label: string
+    value: string
+  }
+  people: {
+    label: string
+    value: string
+  }
+  engine: {
+    label: string
+    value: string
+  }
+  depth: {
+    label: string
+    value: string
+  }
+  mass: {
+    label: string
+    value: string
+  }
+  balast: {
+    label: string
+    value: string
+  }
+  sails: {
+    label: string
+    value: string
+  }
+  keelType: {
+    label: string
+    value: string
+  }
+  keelWeight: {
+    label: string
+    value: string
+  }
+  stere: {
+    label: string
+    value: string
+  }
+}
+
+const technicalDataLabels = {
+  year: "Rok",
+  length: "Długość całkowita",
+  width: "Szerokość całkowita",
+  height: "Wysokość w kabionie",
+  people: "Załoga",
+  engine: "Silnik",
+  depth: "Zanurzenie",
+  mass: "Masa",
+  balast: "Balast denny",
+  sails: "Powierzchnia żagli",
+  keelType: "Miecz",
+  keelWeight: "Waga miecza",
+  stere: "Ster",
+}
+
+const technicalDataValues = {
+  stere: "płetwa na pawęży",
+  keelType: "uchylny",
 }
 
 type Equipment = {
   basic: string[]
   galleyAndMess: string[]
   powerAndMultimedia: string[]
-  other?: string[]
+  other: string[]
 }
 
 export type PriceListSaturday = {
@@ -67,19 +127,58 @@ const yachts: Yacht[] = [
     id: "Twister 800N Harpia",
     url: "twister-800n-harpia",
     technicalData: {
-      year: "2019",
-      length: "8,00 m",
-      width: "2,70 m",
-      height: "1,80 m",
-      people: "6+2",
-      engine: "zaburtowy Tohatsu 6 KM",
-      depth: "0,35/1,50 m",
-      mass: "2200 kg",
-      balast: "500 kg",
-      sails: "34 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "90 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2019",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,00 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,70 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,80 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy Tohatsu 6 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,35/1,50 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "2200 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "500 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "34 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "90 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -183,19 +282,58 @@ const yachts: Yacht[] = [
     id: "Antila 24.4 Borneo",
     url: "antila-244-borneo",
     technicalData: {
-      year: "2021",
-      length: "8,20 m",
-      width: "2,70 m",
-      height: "1,88 m",
-      people: "6+2",
-      engine: "zaburtowy 6 KM",
-      depth: "0,32/1,36 m",
-      mass: "1800 kg",
-      balast: "450 kg",
-      sails: "30 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "80 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2021",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,20 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,70 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,88 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy 6 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,32/1,36 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "1800 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "450 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "30 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "80 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -293,19 +431,58 @@ const yachts: Yacht[] = [
     id: "Aquatic 25T Morrigan",
     url: "aquatic-25t-morrigan",
     technicalData: {
-      year: "2017",
-      length: "7,50 m",
-      width: "2,88 m",
-      height: "1,85 m",
-      people: "6+2",
-      engine: "zaburtowy Tohatsu 6 KM SailPro",
-      depth: "0,33/1,40 m",
-      mass: "2000 kg",
-      balast: "500 kg",
-      sails: "33 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "90 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2017",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "7,50 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,88 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,85 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy Tohatsu 6 KM SailPro",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,33/1,40 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "2000 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "500 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "33 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "90 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -408,19 +585,58 @@ const yachts: Yacht[] = [
     id: "Phobos 25 Saskia",
     url: "phobos-25-saskia",
     technicalData: {
-      year: "2022",
-      length: "7,92 m",
-      width: "2,86 m",
-      height: "1,80 m",
-      people: "6+2",
-      engine: "zaburtowy Tohatsu 6 KM",
-      depth: "0,34/1,44 m",
-      mass: "2100 kg",
-      balast: "500 kg",
-      sails: "30 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "80 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2022",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "7,92 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,86 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,80 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy Tohatsu 6 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,34/1,44 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "2100 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "500 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "30 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "80 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -524,19 +740,58 @@ const yachts: Yacht[] = [
     id: "Antila 26CC Driada",
     url: "antila-26cc-driada",
     technicalData: {
-      year: "2023",
-      length: "8,30 m",
-      width: "2,90 m",
-      height: "1,86 m",
-      people: "6+2",
-      engine: "zaburtowy Tohatsu 9,8 KM",
-      depth: "0,39/1,62 m",
-      mass: "2650 kg",
-      balast: "800 kg",
-      sails: "35,5 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "100 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2023",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,30 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,90 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,86 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy Tohatsu 9,8 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,39/1,62 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "2650 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "800 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "35,5 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "100 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -636,19 +891,58 @@ const yachts: Yacht[] = [
     id: "Antila 26CC Solaris",
     url: "antila-26cc-solaris",
     technicalData: {
-      year: "2015",
-      length: "8,30 m",
-      width: "2,90 m",
-      height: "1,86 m",
-      people: "6+2",
-      engine: "zaburtowy 10 KM",
-      depth: "0,39/1,62 m",
-      mass: "2650 kg",
-      balast: "800 kg",
-      sails: "35,5 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "100 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2015",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,30 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,90 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,86 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy 10 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,39/1,62 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "2650 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "800 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "35,5 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "100 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -754,19 +1048,58 @@ const yachts: Yacht[] = [
     id: "Antila 27 Biały Wilk",
     url: "antila-27-bialy-wilk",
     technicalData: {
-      year: "2021",
-      length: "8,24 m",
-      width: "2,70 m",
-      height: "1,88 m",
-      people: "6+2",
-      engine: "zaburtowy 10 KM",
-      depth: "0,32/1,36 m",
-      mass: "3200 kg",
-      balast: "900 kg",
-      sails: "38 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "100 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2021",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,24 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,70 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,88 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy 10 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,32/1,36 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "3200 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "900 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "38 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "100 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -863,19 +1196,58 @@ const yachts: Yacht[] = [
     id: "Antila 27 Skellige",
     url: "antila-27-skellige",
     technicalData: {
-      year: "2022",
-      length: "8,24 m",
-      width: "2,70 m",
-      height: "1,88 m",
-      people: "6+2",
-      engine: "zaburtowy 10 KM",
-      depth: "0,32/1,36 m",
-      mass: "3200 kg",
-      balast: "900 kg",
-      sails: "38 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "100 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2022",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,24 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,70 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,88 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy 10 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,32/1,36 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "3200 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "900 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "38 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "100 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -975,19 +1347,58 @@ const yachts: Yacht[] = [
     id: "Antila 27 Aldonika",
     url: "antila-27-aldonika",
     technicalData: {
-      year: "2023",
-      length: "8,24 m",
-      width: "2,70 m",
-      height: "1,88 m",
-      people: "6+2",
-      engine: "zaburtowy Tohatsu 9,8 KM",
-      depth: "0,32/1,36 m",
-      mass: "3200 kg",
-      balast: "900 kg",
-      sails: "38 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "100 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2023",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,24 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,70 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,88 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy Tohatsu 9,8 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,32/1,36 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "3200 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "900 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "38 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "100 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -1091,19 +1502,58 @@ const yachts: Yacht[] = [
     id: "Antila 33.3 Przygoda",
     url: "antila-333-przygoda",
     technicalData: {
-      year: "2021",
-      length: "10,30 m",
-      width: "3,24 m",
-      height: "1,95 m",
-      people: "6+4",
-      engine: "stacjonarny 21 KM",
-      depth: "0,45/1,80 m",
-      mass: "4750 kg",
-      balast: "1450 kg",
-      sails: "52 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "120 kg",
-      stere: "ster głębinowy",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2021",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "10,30 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "3,24 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,95 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+4",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "stacjonarny 21 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,45/1,80 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "4750 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "1450 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "52 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "120 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -1198,19 +1648,58 @@ const yachts: Yacht[] = [
     id: "Antila 28.2 Galapagos",
     url: "antila-282-galapagos",
     technicalData: {
-      year: "2023",
-      length: "8,85 m",
-      width: "3,07 m",
-      height: "1,86 m",
-      people: "8+2",
-      engine: "zaburtowy Tohatsu 9,8 KM",
-      depth: "0,43/1,75 m",
-      mass: "4000 kg",
-      balast: "1000 kg",
-      sails: "39 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "90 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2023",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,85 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "3,07 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,86 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "8+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy Tohatsu 9,8 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,43/1,75 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "4000 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "1000 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "39 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "90 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
@@ -1307,19 +1796,58 @@ const yachts: Yacht[] = [
     id: "Twister 800N Strzyga",
     url: "twister-800n-strzyga",
     technicalData: {
-      year: "2024",
-      length: "8,00 m",
-      width: "2,70 m",
-      height: "1,80 m",
-      people: "6+2",
-      engine: "zaburtowy Tohatsu 6 KM",
-      depth: "0,35/1,50 m",
-      mass: "2200 kg",
-      balast: "500 kg",
-      sails: "34 m<sup>2</sup>",
-      keelType: "uchylny",
-      keelWeight: "90 kg",
-      stere: "płetwa na pawęży",
+      year: {
+        label: technicalDataLabels.year,
+        value: "2024",
+      },
+      length: {
+        label: technicalDataLabels.length,
+        value: "8,00 m",
+      },
+      width: {
+        label: technicalDataLabels.width,
+        value: "2,70 m",
+      },
+      height: {
+        label: technicalDataLabels.height,
+        value: "1,80 m",
+      },
+      people: {
+        label: technicalDataLabels.people,
+        value: "6+2",
+      },
+      engine: {
+        label: technicalDataLabels.engine,
+        value: "zaburtowy Tohatsu 6 KM",
+      },
+      depth: {
+        label: technicalDataLabels.depth,
+        value: "0,35/1,50 m",
+      },
+      mass: {
+        label: technicalDataLabels.mass,
+        value: "2200 kg",
+      },
+      balast: {
+        label: technicalDataLabels.balast,
+        value: "500 kg",
+      },
+      sails: {
+        label: technicalDataLabels.sails,
+        value: "34 m<sup>2</sup>",
+      },
+      keelType: {
+        label: technicalDataLabels.keelType,
+        value: technicalDataValues.keelType,
+      },
+      keelWeight: {
+        label: technicalDataLabels.keelWeight,
+        value: "90 kg",
+      },
+      stere: {
+        label: technicalDataLabels.stere,
+        value: technicalDataValues.stere,
+      },
     },
     equipment: {
       basic: [
