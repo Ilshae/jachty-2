@@ -52,6 +52,7 @@ const GlobalStyle = createGlobalStyle`
             0 0,
             150px 150px;
     animation: fadein 0.2s;
+    overflow-x: hidden;
 
     @media ${device.tablet} {
       background-size: 300px 300px;

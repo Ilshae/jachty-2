@@ -1429,7 +1429,7 @@ export const sundayDates: string[] = [
 
 export const saturdayYachts: Yacht[] = yachts.filter(
   (y) =>
-    y.id === "Antila 267 Biały Wilk" ||
+    y.id === "Antila 27 Biały Wilk" ||
     y.id === "Antila 27 Skellige" ||
     y.id === "Twister 800N Harpia" ||
     y.id === "Antila 26CC Solaris" ||
