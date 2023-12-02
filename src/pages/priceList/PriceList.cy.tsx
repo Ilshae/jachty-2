@@ -16,5 +16,14 @@ describe("<PriceList />", () => {
     cy.contains("Antila 33.3 Przygoda")
     cy.contains("Antila 28.2 Galapagos")
     // cy.contains("Twister 800N Strzyga")
+
+    cy.contains("Armator zastrzega sobie prawo do zmian w cenniku.")
+    cy.contains("5% dla stałych klientów.")
+    cy.contains(
+      "Po uzgodnieniu terminu i warunków czarteru, wysłana zostanie umowa na ustalony adres e-mail."
+    )
+    cy.contains(
+      "Po zakończeniu najmu pobierana jest obowiązkowa opłata za sprzątanie końcowe jachtu w wysokości 100 zł (jacht do 8m długości) lub 120 zł (jacht powyżej 8m długości)."
+    )
   })
 })
