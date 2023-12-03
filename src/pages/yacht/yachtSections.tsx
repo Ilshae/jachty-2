@@ -22,7 +22,7 @@ export const yachtSections = (yacht: Yacht) => {
     },
     {
       name: "O czarterze",
-      description: <CharterInfo />,
+      description: <CharterInfo showTitle={false} />,
     },
   ]
 }

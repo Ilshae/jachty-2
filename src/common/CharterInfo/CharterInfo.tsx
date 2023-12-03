@@ -3,9 +3,9 @@ import styled from "styled-components"
 import charterInfoSections from "./CharterInfoSections.tsx"
 import { SectionType } from "../types.ts"
 
-const CharterInfo = () => (
+const CharterInfo: FC<{ showTitle?: boolean }> = ({ showTitle = true }) => (
   <>
-    <h3>Informacje o czarterze</h3>
+    {showTitle ? <h3>Informacje o czarterze</h3> : null}
     {charterInfoSections.map(({ name, description }) => (
       <Section name={name} description={description} />
     ))}
