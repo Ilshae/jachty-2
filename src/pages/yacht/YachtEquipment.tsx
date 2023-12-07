@@ -1,6 +1,7 @@
 import { Yacht } from "../../data/yachts.ts"
 import { FC } from "react"
 import styled from "styled-components"
+import { device } from "../../theme.ts"
 
 const YachtEquipment: FC<{ equipment: Yacht["equipment"] }> = ({
   equipment,
@@ -36,6 +37,10 @@ const List: FC<{ title: string; items: string[] }> = ({ title, items }) => (
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+
+  @media ${device.tablet} {
+    grid-template-columns: 1fr;
+  }
 `
 
 const ListWrapper = styled.div`
@@ -57,6 +62,12 @@ const ListWrapper = styled.div`
   &:nth-child(4),
   &:nth-child(6) {
     padding: 10px 0 10px 10px;
+  }
+
+  @media ${device.tablet} {
+    &:nth-child(n) {
+      padding: 10px 0;
+    }
   }
 `
 

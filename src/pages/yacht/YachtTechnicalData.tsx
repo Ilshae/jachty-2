@@ -17,14 +17,11 @@ const YachtTechnicalData: FC<{ technicalData: Yacht["technicalData"] }> = ({
   )
 }
 
-const Wrapper = styled.div`
-  width: 300px;
-`
+const Wrapper = styled.div``
 
 const Row = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 300px;
   padding: 3px 0;
 
   span {

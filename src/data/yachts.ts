@@ -140,7 +140,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "2 podwójne + 2 rozkładane w mesie",
+        value: "2 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -302,7 +302,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "2 podwójne + 2 rozkładane w mesie",
+        value: "2 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -458,7 +458,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "2 podwójne + 2 rozkładane w mesie",
+        value: "2 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -619,7 +619,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "2 podwójne + 2 rozkładane w mesie",
+        value: "2 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -781,7 +781,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "3 podwójne + 2 rozkładane w mesie",
+        value: "3 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -939,7 +939,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "2 podwójne + 2 rozkładane w mesie",
+        value: "2 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -1103,7 +1103,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "3 podwójne + 2 rozkładane w mesie",
+        value: "3 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -1258,7 +1258,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "3 podwójne + 2 rozkładane w mesie",
+        value: "3 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -1416,7 +1416,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "3 podwójne + 2 rozkładane w mesie",
+        value: "3 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -1578,7 +1578,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "3 podwójne + 2 rozkładane w mesie",
+        value: "3 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -1731,7 +1731,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "3 podwójne + 2 rozkładane w mesie",
+        value: "3 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,
@@ -1886,7 +1886,7 @@ const yachts: Yacht[] = [
       },
       berths: {
         label: technicalDataLabels.berths,
-        value: "2 podwójne + 2 rozkładane w mesie",
+        value: "2 podwójne + 2 w mesie",
       },
       length: {
         label: technicalDataLabels.length,

@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { FC } from "react"
 import { SectionType } from "../../common/types.ts"
 import yachtSections from "./yachtSections.tsx"
+import { device } from "../../theme.ts"
 
 const Yacht = () => {
   const { url } = useParams()
@@ -38,7 +39,7 @@ const Yacht = () => {
 const Section: FC<SectionType> = ({ name, description }) => (
   <StyledSection>
     <h3>{name}</h3>
-    {description}
+    <div>{description}</div>
   </StyledSection>
 )
 
@@ -55,11 +56,23 @@ const Container = styled(CommonContainer)`
 
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 0.35fr 0.65fr;
+  grid-template-columns: 0.33fr 0.66fr;
+
+  @media ${device.laptopL} {
+    grid-template-columns: 0.5fr 0.5fr;
+  }
+
+  @media ${device.laptop} {
+    grid-template-columns: 1fr;
+  }
 `
 
 const StyledSection = styled.section`
   padding-bottom: 24px;
+
+  &:first-of-type {
+    padding-right: 64px;
+  }
 
   &:last-child {
     padding-bottom: 0;
@@ -79,6 +92,24 @@ const StyledSection = styled.section`
 
   li {
     margin: 4px 0;
+  }
+
+  @media ${device.laptop} {
+    &:first-of-type {
+      padding-right: 0;
+      div {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media ${device.laptop} {
+    &:first-of-type {
+      div {
+        width: 100%;
+      }
+    }
   }
 `
 
