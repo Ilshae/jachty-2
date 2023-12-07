@@ -13,16 +13,16 @@ export const charterInfoSections: SectionType[] = [
     description: <DcoumentsDescription />,
   },
   {
-    name: "Ogólne",
-    description: <GeneralDescription />,
-  },
-  {
     name: "Rabaty",
     description: <DiscountDescription />,
   },
   {
     name: "Przebieg rezerwacji",
     description: <ReservationDescription />,
+  },
+  {
+    name: "Ogólne",
+    description: <GeneralDescription />,
   },
   {
     name: "Dodatkowe opłaty",
