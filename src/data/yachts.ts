@@ -3,6 +3,10 @@ type TechnicalData = {
     label: string
     value: string
   }
+  berths: {
+    label: string
+    value: string
+  }
   length: {
     label: string
     value: string
@@ -54,7 +58,8 @@ type TechnicalData = {
 }
 
 const technicalDataLabels = {
-  year: "Rok",
+  year: "Rok produkcji",
+  berths: "Koje",
   length: "Długość całkowita",
   width: "Szerokość całkowita",
   height: "Wysokość w kabionie",
@@ -75,9 +80,11 @@ const technicalDataValues = {
 }
 
 type Equipment = {
-  basic: string[]
+  sailing: string[]
   galleyAndMess: string[]
   powerAndMultimedia: string[]
+  security: string[]
+  exploitation: string[]
   other: string[]
 }
 
@@ -131,6 +138,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2019",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "2 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,00 m",
@@ -181,8 +192,7 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 2 podwójne + 2 rozkładane w mesie",
+      sailing: [
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -195,11 +205,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 2 x 30 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 2-3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -218,6 +223,15 @@ const yachts: Yacht[] = [
         "gniazda 12V i 230V",
         "przedłużacz",
         "akumulator 2 x 120 Ah",
+      ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 2 x 30 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 2-3 kg",
       ],
       other: [
         "WC chemiczne w osobnej kabinie",
@@ -286,6 +300,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2021",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "2 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,20 m",
@@ -336,8 +354,8 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 2 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "szprycbuda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -350,11 +368,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 80 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -374,8 +387,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 80 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
+      ],
       other: [
-        "szprycbuda",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
         "gaśnica",
@@ -435,6 +456,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2017",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "2 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "7,50 m",
@@ -485,8 +510,7 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 2 podwójne + 2 rozkładane w mesie",
+      sailing: [
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -499,11 +523,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 2 x 20 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -522,6 +541,15 @@ const yachts: Yacht[] = [
         "gniazda 12V i 230V",
         "przedłużacz",
         "akumulator 2 x 100 Ah",
+      ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 2 x 20 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
       ],
       other: [
         "WC chemiczne w osobnej kabinie",
@@ -589,6 +617,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2022",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "2 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "7,92 m",
@@ -639,8 +671,7 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 2 podwójne + 2 rozkładane w mesie",
+      sailing: [
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -653,11 +684,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiornik na wodę 80 l",
-        "paliwo 12 l, pełny do pełnego",
-        "butla gazowa 2 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -676,6 +702,15 @@ const yachts: Yacht[] = [
         "gniazda 12V i 230V",
         "przedłużacz",
         "akumulator 110 Ah",
+      ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiornik na wodę 80 l",
+        "paliwo 12 l, pełny do pełnego",
+        "butla gazowa 2 kg",
       ],
       other: [
         "WC chemiczne w osobnej kabinie",
@@ -744,6 +779,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2023",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "3 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,30 m",
@@ -794,8 +833,8 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 3 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "szprycbuda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -808,11 +847,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 80 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -831,8 +865,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 80 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
+      ],
       other: [
-        "szprycbuda",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
         "gaśnica",
@@ -895,6 +937,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2015",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "2 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,30 m",
@@ -945,8 +991,9 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 2 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "szprycbuda",
+        "echo sonda",
         "patent do stawiania masztu typu ramka, elektrycznie za pomocą wciągarki",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -959,11 +1006,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 100 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -982,9 +1024,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 3 x 100 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 100 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
+      ],
       other: [
-        "szprycbuda",
-        "echo sonda",
         "TV",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
@@ -1052,6 +1101,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2021",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "3 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,24 m",
@@ -1102,8 +1155,8 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 3 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "szprycbuda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -1116,11 +1169,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 80 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -1139,8 +1187,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 80 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
+      ],
       other: [
-        "szprycbuda",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
         "gaśnica",
@@ -1200,6 +1256,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2022",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "3 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,24 m",
@@ -1250,8 +1310,8 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 3 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "szprycbuda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -1264,11 +1324,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 80 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -1287,8 +1342,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 80 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
+      ],
       other: [
-        "szprycbuda",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
         "gaśnica",
@@ -1351,6 +1414,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2023",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "3 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,24 m",
@@ -1401,8 +1468,8 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 3 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "szprycbuda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -1415,11 +1482,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 80 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -1438,8 +1500,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 80 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
+      ],
       other: [
-        "szprycbuda",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
         "gaśnica",
@@ -1506,6 +1576,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2021",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "3 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "10,30 m",
@@ -1556,8 +1630,10 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 3 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "ster strumieniowy 3KW na dziobie",
+        "szprycbuda",
+        "echosonda",
         "patent do stawiania masztu typu ramka + elektryczny kabestan",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -1570,11 +1646,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 100 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -1594,10 +1665,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 100 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
+      ],
       other: [
-        "ster strumieniowy 3KW na dziobie",
-        "echosonda",
-        "szprycbuda",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
         "gaśnica",
@@ -1652,6 +1729,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2023",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "3 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,85 m",
@@ -1702,8 +1783,8 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 3 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "szprycbuda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -1716,11 +1797,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 80 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -1739,8 +1815,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 10 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 80 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 3 kg",
+      ],
       other: [
-        "szprycbuda",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
         "gaśnica",
@@ -1800,6 +1884,10 @@ const yachts: Yacht[] = [
         label: technicalDataLabels.year,
         value: "2024",
       },
+      berths: {
+        label: technicalDataLabels.berths,
+        value: "2 podwójne + 2 rozkładane w mesie",
+      },
       length: {
         label: technicalDataLabels.length,
         value: "8,00 m",
@@ -1850,8 +1938,8 @@ const yachts: Yacht[] = [
       },
     },
     equipment: {
-      basic: [
-        "koje: 2 podwójne + 2 rozkładane w mesie",
+      sailing: [
+        "szprycbuda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -1864,11 +1952,6 @@ const yachts: Yacht[] = [
         "drabinka rufowa",
         "stopień na koszu dziobowym",
         "stolik kokpitowy",
-        "zbiorniki na wodę 2 x 30 l",
-        "paliwo pełny do pełnego",
-        "butla gazowa 2-3 kg",
-        "komplet środków ratunkowych 8 kamizelek + koło",
-        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
       ],
       galleyAndMess: [
         "lodówka",
@@ -1889,8 +1972,16 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 120 Ah",
       ],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "jacht i silnik są ubezpieczone w zakresie OC, JACHT CASCO, NW i rzeczy osobiste załogi",
+      ],
+      exploitation: [
+        "zbiorniki na wodę 2 x 30 l",
+        "paliwo pełny do pełnego",
+        "butla gazowa 2-3 kg",
+      ],
       other: [
-        "szprycbuda",
         "WC chemiczne w osobnej kabinie",
         "skrzynka narzędziowa",
         "gaśnica",

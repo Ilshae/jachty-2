@@ -14,13 +14,23 @@ const Yacht = () => {
   }
 
   const { id } = yacht
+  const sections = yachtSections(yacht)
 
   return (
     <Container>
       <h1>{id}</h1>
-      {yachtSections(yacht).map(({ name, description }) => (
-        <Section name={name} description={description} />
-      ))}
+      <Wrapper>
+        <Section
+          name={sections[0].name}
+          description={sections[0].description}
+        />
+        <Section
+          name={sections[1].name}
+          description={sections[1].description}
+        />
+      </Wrapper>
+      <Section name={sections[2].name} description={sections[2].description} />
+      <Section name={sections[3].name} description={sections[3].description} />
     </Container>
   )
 }
@@ -41,6 +51,11 @@ const Container = styled(CommonContainer)`
     text-transform: uppercase;
     text-align: center;
   }
+`
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 0.35fr 0.65fr;
 `
 
 const StyledSection = styled.section`

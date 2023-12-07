@@ -25,9 +25,10 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   width: 300px;
+  padding: 3px 0;
 
   span {
-    background-color: ${({ theme }) => theme.color.light70};
+    background-color: ${({ theme }) => theme.color.light80};
   }
 `
 
