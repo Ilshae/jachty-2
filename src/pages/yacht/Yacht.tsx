@@ -70,7 +70,7 @@ const Wrapper = styled.div`
 const StyledSection = styled.section`
   padding-bottom: 24px;
 
-  &:first-of-type {
+  &:first-child {
     padding-right: 64px;
   }
 

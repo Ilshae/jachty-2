@@ -6,6 +6,8 @@ import {
 } from "@mui/material"
 import ReactPlayer from "react-player"
 import styled from "styled-components"
+import Lightbox from "yet-another-react-lightbox"
+import "yet-another-react-lightbox/styles.css"
 
 const YachtGallery: FC<{
   gallery?: Yacht["gallery"]
@@ -16,10 +18,12 @@ const YachtGallery: FC<{
     isOpen: boolean
   }>({ photoIndex: 0, isOpen: false })
 
-  const { photoIndex } = galleryState
+  const { photoIndex, isOpen } = galleryState
 
   if (gallery) {
-    const galleryUrls = gallery?.map((i) => `/assets/yachts/${i}`)
+    const galleryUrls = gallery?.map((i) => ({
+      src: `/assets/yachts/${i}`,
+    }))
 
     return (
       <>
@@ -37,6 +41,14 @@ const YachtGallery: FC<{
             </ImageListItem>
           ))}
         </ImageList>
+        {isOpen ? (
+          <Lightbox
+            open={isOpen}
+            close={() => setGalleryState({ photoIndex: 0, isOpen: false })}
+            index={photoIndex}
+            slides={galleryUrls}
+          />
+        ) : null}
         {video
           ? video.map((v) => (
               <ReactPlayer key={v} url={v} controls={true} width="800px" />
@@ -66,6 +78,10 @@ const ImageList = styled(MUIImageList)`
 
 const ImageListItem = styled(MUIImageListItem)`
   margin: 0 !important;
+
+  img {
+    cursor: pointer;
+  }
 `
 
 export default YachtGallery
