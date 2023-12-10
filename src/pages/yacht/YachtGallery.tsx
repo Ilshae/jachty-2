@@ -8,6 +8,7 @@ import ReactPlayer from "react-player"
 import styled from "styled-components"
 import LightBox, { Slide } from "yet-another-react-lightbox"
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
+import Zoom from "yet-another-react-lightbox/plugins/zoom"
 import "yet-another-react-lightbox/styles.css"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
 
@@ -41,7 +42,19 @@ const YachtGallery: FC<{
           close={() => setIndex(-1)}
           index={index}
           slides={slides}
-          plugins={[Thumbnails]}
+          plugins={[Thumbnails, Zoom]}
+          animation={{ zoom: 500 }}
+          zoom={{
+            maxZoomPixelRatio: 2,
+            zoomInMultiplier: 2,
+            doubleTapDelay: 300,
+            doubleClickDelay: 300,
+            doubleClickMaxStops: 2,
+            keyboardMoveDistance: 50,
+            wheelZoomDistanceFactor: 100,
+            pinchZoomDistanceFactor: 100,
+            scrollToZoom: true,
+          }}
         />
         {video
           ? video.map((v) => (
