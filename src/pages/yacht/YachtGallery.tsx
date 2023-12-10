@@ -6,21 +6,21 @@ import {
 } from "@mui/material"
 import ReactPlayer from "react-player"
 import styled from "styled-components"
-import FsLightbox from "fslightbox-react"
+import LightBox, { Slide } from "yet-another-react-lightbox"
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
+import "yet-another-react-lightbox/styles.css"
+import "yet-another-react-lightbox/plugins/thumbnails.css"
 
 const YachtGallery: FC<{
   gallery?: Yacht["gallery"]
   video?: Yacht["video"]
 }> = ({ gallery, video }) => {
-  const [galleryState, setGalleryState] = useState<{
-    photoIndex: number
-    isOpen: boolean
-  }>({ photoIndex: 0, isOpen: false })
-
-  const { isOpen } = galleryState
+  const [index, setIndex] = useState(-1)
 
   if (gallery) {
-    const galleryUrls = gallery?.map((i) => `/assets/yachts/${i}`)
+    const slides: Slide[] = gallery?.map((i) => ({
+      src: `/assets/yachts/${i}`,
+    }))
 
     return (
       <>
@@ -31,14 +31,18 @@ const YachtGallery: FC<{
                 src={`/assets/yachts/${img}`}
                 key={img}
                 alt={img}
-                onClick={() =>
-                  setGalleryState({ photoIndex: index, isOpen: true })
-                }
+                onClick={() => setIndex(index)}
               />
             </ImageListItem>
           ))}
         </ImageList>
-        <FsLightbox toggler={isOpen} sources={galleryUrls} />
+        <LightBox
+          open={index >= 0}
+          close={() => setIndex(-1)}
+          index={index}
+          slides={slides}
+          plugins={[Thumbnails]}
+        />
         {video
           ? video.map((v) => (
               <ReactPlayer key={v} url={v} controls={true} width="800px" />
