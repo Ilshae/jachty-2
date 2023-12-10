@@ -4,13 +4,14 @@ import {
   ImageList as MUIImageList,
   ImageListItem as MUIImageListItem,
 } from "@mui/material"
-import ReactPlayer from "react-player"
+import CReactPlayer from "react-player"
 import styled from "styled-components"
 import LightBox, { Slide } from "yet-another-react-lightbox"
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails"
 import Zoom from "yet-another-react-lightbox/plugins/zoom"
 import "yet-another-react-lightbox/styles.css"
 import "yet-another-react-lightbox/plugins/thumbnails.css"
+import { device } from "../../theme.ts"
 
 const YachtGallery: FC<{
   gallery?: Yacht["gallery"]
@@ -56,11 +57,13 @@ const YachtGallery: FC<{
             scrollToZoom: true,
           }}
         />
-        {video
-          ? video.map((v) => (
-              <ReactPlayer key={v} url={v} controls={true} width="800px" />
-            ))
-          : null}
+        {video ? (
+          <Wrapper>
+            {video.map((v) => (
+              <ReactPlayer key={v} url={v} controls={true} width={"100%"} />
+            ))}
+          </Wrapper>
+        ) : null}
       </>
     )
   }
@@ -88,6 +91,39 @@ const ImageListItem = styled(MUIImageListItem)`
 
   img {
     cursor: pointer;
+  }
+`
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: center;
+  }
+`
+
+const ReactPlayer = styled(CReactPlayer)`
+  &:first-of-type {
+    padding: 0 2px 0 0;
+  }
+
+  &:last-of-type {
+    padding: 0 0 0 2px;
+  }
+
+  @media ${device.tablet} {
+    flex-direction: column;
+    align-items: center;
+
+    &:first-of-type {
+      padding: 2px 0;
+    }
+
+    &:last-of-type {
+      padding: 2px 0;
+    }
   }
 `
 

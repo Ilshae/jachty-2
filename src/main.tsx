@@ -16,9 +16,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   </React.StrictMode>
 )
 
-// TODO:
-// - NavLink nie podświetla nawigacji
-// - Footer powinno przyklejać się do dółu strony
-// - brzydkie zdjęcie "Zdjecia dostępne wkrótce"
-// - dostosować rozmiar hero, ogólnie spojrzeć na scaling
-// - handle not matched yacht url in Yacht.tsx
+/*
+ TODO:
+ - NavLink nie podświetla nawigacji
+ - Footer powinno przyklejać się do dółu strony
+ - brzydkie zdjęcie "Zdjecia dostępne wkrótce"
+ - dostosować rozmiar hero, ogólnie spojrzeć na scaling
+ - handle not matched yacht url in Yacht.tsx
+ - parsowanie html w technical data
+*/
