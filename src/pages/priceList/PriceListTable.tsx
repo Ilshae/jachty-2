@@ -95,8 +95,8 @@ const Row: FC<{ yacht: Yacht }> = ({ yacht }) => (
         {yacht.id}
       </Link>
     </td>
-    {Object.values(yacht.priceList).map((price) => (
-      <td>{price}</td>
+    {Object.values(yacht.priceList).map((price, index) => (
+      <td key={index}>{price}</td>
     ))}
   </tr>
 )

@@ -9,7 +9,7 @@ const CharterInfo: FC<{ showTitle?: boolean }> = ({ showTitle = true }) => (
     {showTitle ? <h3>Informacje o czarterze</h3> : null}
     <Wrapper>
       {charterInfoSections.map(({ name, description }) => (
-        <Section name={name} description={description} />
+        <Section name={name} description={description} key={name} />
       ))}
     </Wrapper>
   </>

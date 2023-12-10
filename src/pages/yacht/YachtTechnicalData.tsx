@@ -6,18 +6,16 @@ const YachtTechnicalData: FC<{ technicalData: Yacht["technicalData"] }> = ({
   technicalData,
 }) => {
   return (
-    <Wrapper>
+    <>
       {Object.values(technicalData).map(({ label, value }) => (
-        <Row>
+        <Row key={label}>
           <span>{label}:</span>
           <span>{value}</span>
         </Row>
       ))}
-    </Wrapper>
+    </>
   )
 }
-
-const Wrapper = styled.div``
 
 const Row = styled.div`
   display: flex;
