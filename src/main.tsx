@@ -18,7 +18,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 /*
  TODO:
- - Footer powinno przyklejać się do dółu strony
  - brzydkie zdjęcie "Zdjecia dostępne wkrótce"
  - dostosować rozmiar hero, ogólnie spojrzeć na scaling
  - handle not matched yacht url in Yacht.tsx

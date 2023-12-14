@@ -64,7 +64,7 @@ const IconLink: FC<{ href: string; icon: ReactNode; text: string }> = ({
 
 const Container = styled(CommonContainer)`
   display: flex;
-  padding: 32px 0;
+  padding: 32px 0 64px 0;
   text-align: center;
   justify-content: center;
 
