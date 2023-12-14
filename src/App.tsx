@@ -62,7 +62,6 @@ const GlobalStyle = createGlobalStyle`
               0 0,
               125px 125px;
     }
-
   }
 `
 
