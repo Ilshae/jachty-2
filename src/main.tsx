@@ -24,4 +24,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
  - dostosować rozmiar hero, ogólnie spojrzeć na scaling
  - handle not matched yacht url in Yacht.tsx
  - parsowanie html w technical data
+ - naprawić errory w konsoli
 */
