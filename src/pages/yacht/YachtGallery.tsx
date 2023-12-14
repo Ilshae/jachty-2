@@ -68,18 +68,7 @@ const YachtGallery: FC<{
     )
   }
 
-  if (!gallery)
-    return (
-      <MUIImageList>
-        <MUIImageListItem>
-          <img
-            src={`/assets/backgrounds/noGallery.jpg`}
-            key={"noGallery"}
-            alt={"noGallery"}
-          />
-        </MUIImageListItem>
-      </MUIImageList>
-    )
+  if (!gallery) return <NoGallery>Zdjęcia dostępne wkrótce</NoGallery>
 }
 
 const ImageList = styled(MUIImageList)`
@@ -125,6 +114,10 @@ const ReactPlayer = styled(CReactPlayer)`
       padding: 2px 0;
     }
   }
+`
+
+const NoGallery = styled.h4`
+  background-color: ${({ theme }) => theme.color.light80};
 `
 
 export default YachtGallery

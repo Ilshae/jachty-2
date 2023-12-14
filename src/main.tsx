@@ -18,8 +18,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 /*
  TODO:
- - brzydkie zdjęcie "Zdjecia dostępne wkrótce"
  - dostosować rozmiar hero, ogólnie spojrzeć na scaling
  - handle not matched yacht url in Yacht.tsx
  - naprawić errory w konsoli
+ - sprawdzić czy każdy tekst ma półprzezroczyste tło
 */
