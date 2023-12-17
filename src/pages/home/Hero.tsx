@@ -5,28 +5,51 @@ import { device } from "../../theme.ts"
 
 const Hero: FC = () => {
   return (
-    <Wrapper>
-      <Background />
-      <Header>
-        <h1>
-          <span>Czartery na mazurach</span>
-        </h1>
-        <h2>
-          <span>
-            Komfortowe i szybkie jachty, życzliwa obsługa, fachowy serwis
-          </span>
-        </h2>
-      </Header>
-      <Waves />
-    </Wrapper>
+    <HeightWrapper>
+      <PositioningWrapper>
+        <Background />
+        <Header>
+          <h1>
+            <span>Czartery na mazurach</span>
+          </h1>
+          <h2>
+            <span>
+              Komfortowe i szybkie jachty, życzliwa obsługa, fachowy serwis
+            </span>
+          </h2>
+        </Header>
+        <Waves />
+      </PositioningWrapper>
+    </HeightWrapper>
   )
 }
 
-const Wrapper = styled.section`
+const HeightWrapper = styled.section`
+  height: 600px;
+
+  @media ${device.desktop} {
+    height: 550px;
+  }
+  @media ${device.laptopL} {
+    height: 500px;
+  }
+  @media ${device.laptop} {
+    height: 450px;
+  }
+  @media ${device.tablet} {
+    height: 400px;
+  }
+  @media ${device.mobileL} {
+    height: 350px;
+  }
+  @media ${device.mobileM} {
+    height: 300px;
+  }
+`
+
+const PositioningWrapper = styled.section`
   height: 100%;
   width: 100%;
-  min-height: 300px;
-  max-height: 500px;
   position: relative;
   text-align: center;
 `
@@ -46,8 +69,6 @@ const float = keyframes`
 const Background = styled.div`
   height: 100%;
   width: 100%;
-  min-height: 300px;
-  max-height: 500px;
   background-image: url("/assets/backgrounds/hero.jpg");
   background-size: cover;
   background-position: bottom;
