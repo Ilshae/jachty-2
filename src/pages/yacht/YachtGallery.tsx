@@ -58,7 +58,7 @@ const YachtGallery: FC<{
           }}
         />
         {video ? (
-          <Wrapper>
+          <Wrapper $videos={video.length}>
             {video.map((v) => (
               <ReactPlayer key={v} url={v} controls={true} width={"100%"} />
             ))}
@@ -83,9 +83,11 @@ const ImageListItem = styled(MUIImageListItem)`
   }
 `
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ $videos: number }>`
   display: flex;
   justify-content: space-evenly;
+  margin: 0 auto;
+  width: ${({ $videos }) => ($videos === 1 ? "50%" : "100%")};
 
   @media ${device.tablet} {
     flex-direction: column;
