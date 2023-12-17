@@ -30,19 +30,20 @@ const PriceList = () => {
 }
 
 const Container = styled(CommonContainer)`
-  background-color: ${({ theme }) => theme.color.light};
   padding: 32px 0;
 
   h3 {
     font-size: ${({ theme }) => theme.fontSize.title};
     margin: 12px 0;
     width: 100%;
+    background-color: ${({ theme }) => theme.color.light80};
   }
 
   h4 {
     font-size: ${({ theme }) => theme.fontSize.subTitle};
     font-weight: 400;
     margin: 8px 0;
+    background-color: ${({ theme }) => theme.color.light80};
   }
 `
 
@@ -53,6 +54,10 @@ const VerticalScroll = styled.div`
 const Section = styled.section`
   &:nth-of-type(1) {
     padding-bottom: 32px;
+  }
+
+  p {
+    background-color: ${({ theme }) => theme.color.light80};
   }
 `
 

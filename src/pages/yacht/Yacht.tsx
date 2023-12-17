@@ -55,6 +55,7 @@ const Container = styled(CommonContainer)`
     font-family: ${({ theme }) => theme.fontFamily.action};
     text-transform: uppercase;
     text-align: center;
+    background-color: ${({ theme }) => theme.color.light80};
   }
 `
 
@@ -86,16 +87,19 @@ const StyledSection = styled.section`
     font-size: ${({ theme }) => theme.fontSize.title};
     margin: 12px 0;
     width: 100%;
+    background-color: ${({ theme }) => theme.color.light80};
   }
 
   h4 {
     font-size: ${({ theme }) => theme.fontSize.subTitle};
     font-weight: 400;
     margin: 8px 0;
+    background-color: ${({ theme }) => theme.color.light80};
   }
 
   li {
     margin: 4px 0;
+    background-color: ${({ theme }) => theme.color.light80};
   }
 
   @media ${device.laptop} {

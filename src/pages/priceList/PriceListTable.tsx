@@ -56,6 +56,7 @@ const FillerTh: FC = () => {
 }
 
 const Table = styled.table`
+  background-color: ${({ theme }) => theme.color.light};
   border: 3px solid ${({ theme }) => theme.color.primary};
   font-weight: bold;
   border-spacing: 0;

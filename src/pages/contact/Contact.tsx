@@ -80,6 +80,7 @@ const Section = styled.section`
 
   h3 {
     font-size: ${({ theme }) => theme.fontSize.subTitle};
+    background-color: ${({ theme }) => theme.color.light80};
   }
 
   @media ${device.laptop} {

@@ -20,5 +20,4 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
  TODO:
  - dostosować rozmiar hero, ogólnie spojrzeć na scaling
  - naprawić errory w konsoli
- - sprawdzić czy każdy tekst ma półprzezroczyste tło
 */
