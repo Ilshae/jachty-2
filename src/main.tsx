@@ -15,9 +15,3 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
   </React.StrictMode>
 )
-
-/*
- TODO:
- - dostosować rozmiar hero, ogólnie spojrzeć na scaling
- - naprawić errory w konsoli
-*/

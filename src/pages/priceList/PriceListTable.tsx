@@ -25,15 +25,15 @@ export const PriceListTable: FC<{ weekendDay: WeekendDay }> = ({
 
   const yachts =
     weekendDay === WeekendDay.SATURDAY
-      ? saturdayYachts.map((yacht) => <Row yacht={yacht} />)
-      : sundayYachts.map((yacht) => <Row yacht={yacht} />)
+      ? saturdayYachts.map((yacht) => <Row key={yacht.id} yacht={yacht} />)
+      : sundayYachts.map((yacht) => <Row key={yacht.id} yacht={yacht} />)
 
   return (
     <Table>
       <thead>
         <tr>
           <th>{tHeadTitle}</th>
-          <FillerTh />
+          <FillerTh key={"filler"} />
         </tr>
       </thead>
       <thead>
@@ -50,7 +50,7 @@ export const PriceListTable: FC<{ weekendDay: WeekendDay }> = ({
 const FillerTh: FC = () => {
   const ths = []
   for (let i = 0; i < 12; i++) {
-    ths.push(<th />)
+    ths.push(<th key={i} />)
   }
   return ths
 }

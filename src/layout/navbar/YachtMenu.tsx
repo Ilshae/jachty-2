@@ -27,16 +27,18 @@ export const YachtMenu: FC<{
       >
         Jachty Żaglowe <KeyboardArrowDownIcon />
       </DesktopYachtList>
-      <MobileYachtList $menuState={menuState}>
-        <MobileYachtButton
-          onClick={() => {
-            setMobileYachtListOpen(!mobileYachtListOpen)
-          }}
-          data-cy={"open-yacht-menu"}
-        >
-          Jachty Żaglowe
-        </MobileYachtButton>
-      </MobileYachtList>
+      <Ul>
+        <MobileYachtList $menuState={menuState}>
+          <MobileYachtButton
+            onClick={() => {
+              setMobileYachtListOpen(!mobileYachtListOpen)
+            }}
+            data-cy={"open-yacht-menu"}
+          >
+            Jachty Żaglowe
+          </MobileYachtButton>
+        </MobileYachtList>
+      </Ul>
       <MegaBox
         $menuState={menuState}
         $mobileYachtListOpen={mobileYachtListOpen}
@@ -66,6 +68,10 @@ const DesktopYachtList = styled.span`
   @media ${device.tablet} {
     display: none;
   }
+`
+
+const Ul = styled.ul`
+  padding-left: 0;
 `
 
 const MobileYachtList = styled.li<{
