@@ -1,6 +1,6 @@
 import { FC, lazy, Suspense } from "react"
 import { Route, Routes } from "react-router-dom"
-import { ThemeProvider } from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
 import { theme, device } from "./theme.ts"
 import { createGlobalStyle } from "styled-components"
 
@@ -19,23 +19,33 @@ const App: FC = () => {
   return (
     <Suspense fallback={<Loading />}>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} errorElement={<ErrorBoundary />} />
-          <Route
-            path="/kontakt"
-            element={<Contact />}
-            errorElement={<ErrorBoundary />}
-          />
-          <Route
-            path="/cennik"
-            element={<PriceList />}
-            errorElement={<ErrorBoundary />}
-          />
-          <Route path="/:url" element={<Yacht />} />
-        </Routes>
-        <Footer />
+        <Wrapper>
+          <GlobalStyle />
+          <Navbar />
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+              errorElement={<ErrorBoundary />}
+            />
+            <Route
+              path="/kontakt"
+              element={<Contact />}
+              errorElement={<ErrorBoundary />}
+            />
+            <Route
+              path="/cennik"
+              element={<PriceList />}
+              errorElement={<ErrorBoundary />}
+            />
+            <Route
+              path="/:url"
+              element={<Yacht />}
+              errorElement={<ErrorBoundary />}
+            />
+          </Routes>
+          <Footer />
+        </Wrapper>
       </ThemeProvider>
     </Suspense>
   )
@@ -63,6 +73,12 @@ const GlobalStyle = createGlobalStyle`
               125px 125px;
     }
   }
+`
+
+const Wrapper = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `
 
 export default App

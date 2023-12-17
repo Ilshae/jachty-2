@@ -7,7 +7,6 @@ const ErrorBoundary = () => {
     // the response json is automatically parsed to
     // `error.data`, you also have access to the status
 
-    console.log(error)
     return (
       <div>
         <h1>{error.status}</h1>

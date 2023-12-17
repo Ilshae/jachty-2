@@ -19,7 +19,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 /*
  TODO:
  - dostosować rozmiar hero, ogólnie spojrzeć na scaling
- - handle not matched yacht url in Yacht.tsx
  - naprawić errory w konsoli
  - sprawdzić czy każdy tekst ma półprzezroczyste tło
 */

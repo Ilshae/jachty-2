@@ -11,7 +11,11 @@ const Yacht = () => {
   const { url } = useParams()
   const yacht = yachts.find((y) => y.url === url)
   if (!yacht) {
-    return "Error"
+    return (
+      <Container>
+        <h1>Wybrana strona nie istnieje</h1>
+      </Container>
+    )
   }
 
   const { id } = yacht

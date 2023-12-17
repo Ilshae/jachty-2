@@ -11,53 +11,58 @@ import { CommonContainer } from "../../common/styles.ts"
 
 const Footer: FC = () => {
   return (
-    <Background>
-      <FooterContainer>
-        <ContactWrapper>
-          <ContactSection>
-            <IconLink
-              href={str.address_url}
-              icon={<LocationOnIcon />}
-              text={str.address}
-            />
-            <IconLink
-              href={`mailto:${str.email}`}
-              icon={<EmailIcon />}
-              text={str.email}
-            />
-          </ContactSection>
-          <ContactSection>
-            <IconLink
-              href={`tel:${str.phone2}`}
-              icon={<PhoneIcon />}
-              text={str.phone}
-            />
-            <IconLink
-              href={`https://www.${str.fb}`}
-              icon={<FacebookIcon />}
-              text={str.fb}
-            />
-          </ContactSection>
-        </ContactWrapper>
-        <CopyrightWrapper>
-          <CopyrightSection>
-            <CompanyLink to="/">
-              <img src={"/assets/logos/logo-non-transparent.svg"} alt="logo" />
-            </CompanyLink>
-            <CompanyLink to="/">Jachty Pruszyński</CompanyLink>
-          </CopyrightSection>
-          <CopyrightSection>
-            <AuthorLink
-              href={str.portfolio}
-              rel="nofollow noopener noreferrer"
-              target="_blank"
-            >
-              &copy; Ingrid Pruszyńska 2020
-            </AuthorLink>
-          </CopyrightSection>
-        </CopyrightWrapper>
-      </FooterContainer>
-    </Background>
+    <Wrapper>
+      <Background>
+        <FooterContainer>
+          <ContactWrapper>
+            <ContactSection>
+              <IconLink
+                href={str.address_url}
+                icon={<LocationOnIcon />}
+                text={str.address}
+              />
+              <IconLink
+                href={`mailto:${str.email}`}
+                icon={<EmailIcon />}
+                text={str.email}
+              />
+            </ContactSection>
+            <ContactSection>
+              <IconLink
+                href={`tel:${str.phone2}`}
+                icon={<PhoneIcon />}
+                text={str.phone}
+              />
+              <IconLink
+                href={`https://www.${str.fb}`}
+                icon={<FacebookIcon />}
+                text={str.fb}
+              />
+            </ContactSection>
+          </ContactWrapper>
+          <CopyrightWrapper>
+            <CopyrightSection>
+              <CompanyLink to="/">
+                <img
+                  src={"/assets/logos/logo-non-transparent.svg"}
+                  alt="logo"
+                />
+              </CompanyLink>
+              <CompanyLink to="/">Jachty Pruszyński</CompanyLink>
+            </CopyrightSection>
+            <CopyrightSection>
+              <AuthorLink
+                href={str.portfolio}
+                rel="nofollow noopener noreferrer"
+                target="_blank"
+              >
+                &copy; Ingrid Pruszyńska 2020
+              </AuthorLink>
+            </CopyrightSection>
+          </CopyrightWrapper>
+        </FooterContainer>
+      </Background>
+    </Wrapper>
   )
 }
 
@@ -73,6 +78,10 @@ const IconLink: FC<{ href: string; icon: ReactNode; text: string }> = ({
     </Link>
   )
 }
+
+const Wrapper = styled.div`
+  margin-top: auto;
+`
 
 const Background = styled.footer`
   background-image: url("/assets/backgrounds/background2.jpg");
