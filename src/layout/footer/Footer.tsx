@@ -43,10 +43,7 @@ const Footer: FC = () => {
           <CopyrightWrapper>
             <CopyrightSection>
               <CompanyLink to="/">
-                <img
-                  src={"/assets/logos/logo-non-transparent.svg"}
-                  alt="logo"
-                />
+                <img src={"/assets/logos/logo.png"} alt="logo" />
               </CompanyLink>
               <CompanyLink to="/">Jachty Pruszyński</CompanyLink>
             </CopyrightSection>
@@ -96,7 +93,6 @@ const FooterContainer = styled(CommonContainer)`
   height: 100%;
   width: 100%;
   text-shadow: ${({ theme }) => theme.shadow.text};
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,6 +101,11 @@ const FooterContainer = styled(CommonContainer)`
   color: ${({ theme }) => theme.color.light};
   font-size: ${({ theme }) => theme.fontSize.subTitle};
   font-family: ${({ theme }) => theme.fontFamily.action};
+
+  @media ${device.tablet} {
+    font-size: ${({ theme }) => theme.fontSize.regular};
+    padding: 0;
+  }
 `
 const ContactWrapper = styled.div`
   display: flex;
@@ -116,6 +117,7 @@ const ContactWrapper = styled.div`
   @media ${device.tablet} {
     flex-direction: column;
     align-items: center;
+    padding: 12px;
   }
 `
 
@@ -160,13 +162,20 @@ const Link = styled.a`
     margin: 12px 0;
   }
 
-  @media ${device.tablet} {
-    margin: 16px 0;
+  @media ${device.mobileL} {
+    margin: 8px 0;
   }
 `
 
 const Text = styled.span`
   margin-left: 8px;
+  text-align: center;
+  width: min-content;
+  text-wrap: nowrap;
+  @media (max-width: 340px) {
+    width: 100%;
+    text-wrap: initial;
+  }
 `
 
 const CopyrightWrapper = styled.div`
@@ -178,6 +187,7 @@ const CopyrightWrapper = styled.div`
   @media ${device.tablet} {
     flex-direction: column;
     align-items: center;
+    padding: 10px;
   }
 `
 
@@ -195,7 +205,7 @@ const AuthorLink = styled(Link)`
   font-family: ${({ theme }) => theme.fontFamily.special};
 
   @media ${device.tablet} {
-    margin-top: 30px;
+    margin: 30px 0 15px 0;
   }
 `
 
@@ -213,11 +223,8 @@ const CompanyLink = styled(RRDLink)`
     color: ${({ theme }) => theme.color.secondary};
   }
 
-  @media ${device.mobileM} {
+  @media ${device.tablet} {
     flex-direction: column;
-  }
-
-  @media ${device.mobileS} {
     font-size: ${({ theme }) => theme.fontSize.subTitle};
   }
 
@@ -232,9 +239,14 @@ const CompanyLink = styled(RRDLink)`
       margin-right: 20px;
     }
 
+    @media ${device.mobileL} {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
     @media ${device.mobileM} {
-      margin-bottom: 20px;
-      margin-right: 0px;
+      margin-bottom: 10px;
     }
   }
 `
