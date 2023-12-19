@@ -41,6 +41,17 @@ const Card = styled(MUICard)`
   &:nth-of-type(12) {
     height: 410px;
   }
+
+  @media ${device.tablet} {
+    &:nth-of-type(12) {
+      height: 362px;
+    }
+  }
+  @media ${device.mobileM} {
+    &:nth-of-type(12) {
+      height: 262px;
+    }
+  }
 `
 
 const CardActions = styled(MUICardConent)`
@@ -61,11 +72,9 @@ const CardContent = styled(MUICardConent)`
     @media ${device.tablet} {
       height: 300px;
     }
-
     @media ${device.mobileM} {
       height: 250px;
     }
-
     @media ${device.mobileM} {
       height: 200px;
     }
@@ -88,7 +97,7 @@ const Link = styled(RRDLink)`
   padding: 16px;
   font-weight: 600;
 
-  @media ${device.laptopL} {
+  @media ${device.desktop} {
     font-size: ${({ theme }) => theme.fontSize.subTitle} !important;
   }
 `
