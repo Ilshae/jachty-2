@@ -171,10 +171,11 @@ const Text = styled.span`
   margin-left: 8px;
   text-align: center;
   width: min-content;
-  text-wrap: nowrap;
+  white-space: nowrap;
+
   @media (max-width: 340px) {
     width: 100%;
-    text-wrap: initial;
+    white-space: normal;
   }
 `
 
