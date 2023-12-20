@@ -77,6 +77,10 @@ const ImageList = styled(MUIImageList)`
   @media ${device.laptopL} {
     grid-template-columns: repeat(3, 1fr) !important;
   }
+
+  @media ${device.mobileM} {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 `
 
 const ImageListItem = styled(MUIImageListItem)`
