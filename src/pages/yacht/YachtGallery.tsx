@@ -110,6 +110,12 @@ const Wrapper = styled.div<{ $videos: number }>`
     ${({ $videos }) =>
       $videos && `height: calc(${$videos} * 200px)`} !important;
   }
+
+  @media ${device.mobileM} {
+    width: 100% !important;
+    ${({ $videos }) =>
+      $videos && `height: calc(${$videos} * 150px)`} !important;
+  }
 `
 
 const ReactPlayer = styled(CReactPlayer)`
