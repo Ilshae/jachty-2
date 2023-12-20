@@ -72,7 +72,7 @@ const YachtGallery: FC<{
 }
 
 const ImageList = styled(MUIImageList)`
-  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-columns: repeat(5, 1fr) !important;
 `
 
 const ImageListItem = styled(MUIImageListItem)`
