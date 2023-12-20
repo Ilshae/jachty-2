@@ -100,6 +100,15 @@ const Wrapper = styled.div<{ $videos: number }>`
   @media ${device.tablet} {
     flex-direction: column;
     align-items: center;
+    width: 80% !important;
+    ${({ $videos }) =>
+      $videos && `height: calc(${$videos} * 250px)`} !important;
+  }
+
+  @media ${device.mobileL} {
+    width: 100% !important;
+    ${({ $videos }) =>
+      $videos && `height: calc(${$videos} * 200px)`} !important;
   }
 `
 
