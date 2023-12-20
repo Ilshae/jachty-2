@@ -243,7 +243,7 @@ const CompanyLink = styled(RRDLink)`
     @media ${device.mobileL} {
       width: 50px;
       height: 50px;
-      margin-right: 10px;
+      margin-right: 0;
     }
 
     @media ${device.mobileM} {
