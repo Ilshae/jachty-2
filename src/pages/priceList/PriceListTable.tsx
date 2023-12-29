@@ -33,26 +33,12 @@ export const PriceListTable: FC<{ weekendDay: WeekendDay }> = ({
       <thead>
         <tr>
           <th>{tHeadTitle}</th>
-          <FillerTh key={"filler"} />
-        </tr>
-      </thead>
-      <thead>
-        <tr>
-          <th>Jacht</th>
           {tHead}
         </tr>
       </thead>
       <tbody>{yachts}</tbody>
     </Table>
   )
-}
-
-const FillerTh: FC = () => {
-  const ths = []
-  for (let i = 0; i < 12; i++) {
-    ths.push(<th key={i} />)
-  }
-  return ths
 }
 
 const Table = styled.table`
