@@ -12,7 +12,6 @@ export const CommonContainer = styled.div`
     margin: ${({ theme }) => theme.container.margin.laptopL};
   }
   @media ${device.laptop} {
-    font-size: ${({ theme }) => theme.fontSize.regular};
     margin: ${({ theme }) => theme.container.margin.laptop};
   }
   @media ${device.tablet} {

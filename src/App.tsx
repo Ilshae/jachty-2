@@ -6,6 +6,7 @@ import { createGlobalStyle } from "styled-components"
 
 import ErrorBoundary from "./common/ErrorBoundary.tsx"
 import Loading from "./common/Loading.tsx"
+import ScrollToTop from "./common/ScrollToTop.tsx"
 
 const Navbar = lazy(() => import("./layout/navbar/Navbar.tsx"))
 const Footer = lazy(() => import("./layout/footer/Footer.tsx"))
@@ -21,6 +22,7 @@ const App: FC = () => {
       <ThemeProvider theme={theme}>
         <Wrapper>
           <GlobalStyle />
+          <ScrollToTop />
           <Navbar />
           <Routes>
             <Route
