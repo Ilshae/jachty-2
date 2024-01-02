@@ -24,7 +24,7 @@ describe("<PriceList />", () => {
       "Po uzgodnieniu terminu i warunków czarteru, wysłana zostanie umowa na ustalony adres e-mail."
     )
     cy.contains(
-      "Po zakończeniu najmu pobierana jest obowiązkowa opłata za sprzątanie końcowe jachtu w wysokości 100 zł (jacht do 8m długości) lub 120 zł (jacht powyżej 8m długości)."
+      "Przy wydaniu jachtu pobierana jest obligatoryjna opłata za sprzątanie w wysokości 150 zł za jachty do 9 metrów długości i 200 zł powyżej 9 metrów."
     )
   })
 })
