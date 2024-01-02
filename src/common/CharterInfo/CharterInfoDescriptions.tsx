@@ -29,13 +29,9 @@ export const GeneralDescription = () => (
     </Li>
     <Li>W trakcie czarteru cumowanie w ośrodku jest bezpłatne.</Li>
     <Li>
-      Jachty wydawane są od godziny 16 – ej do 19 – ej pierwszego dnia czarteru,
+      Jachty wydawane są od godziny 15 – ej do 18 – ej pierwszego dnia czarteru,
       a zdawane od godziny 08 – ej do 10 – tej ostatniego dnia czarteru lub po
       uzgodnieniu w innych ramach czasowych.
-    </Li>
-    <Li>
-      Jachty są ubezpieczone w zakresie: CASCO, OC, NNW, silnik ubezpieczony od
-      kradzieży, ubezpieczenie rzeczy osobistych załogi.
     </Li>
     <li>
       Dokumenty niezbędne do zaokrętowania: minimum patent żeglarza jachtowego,
@@ -60,7 +56,7 @@ export const ReservationDescription = () => (
     </Li>
     <Li>
       Zaliczkę w wysokości uzgodnionej w umowie czarteru należy wpłacić w czasie
-      7 dni od daty zawarcia umowy.
+      3 dni od daty zawarcia umowy.
     </Li>
     <Li>
       Resztę wpłaty należy uregulować najpóźniej w dniu rozpoczęcia czarteru.
@@ -70,13 +66,8 @@ export const ReservationDescription = () => (
 export const AdditionalPricesDescription = () => (
   <ul>
     <Li>
-      Po zakończeniu najmu pobierana jest obowiązkowa opłata za sprzątanie
-      końcowe jachtu w wysokości 100 zł (jacht do 8m długości) lub 120 zł (jacht
-      powyżej 8m długości).
-    </Li>
-    <Li>
-      Czarterujący jest zobowiązany zwrócić jacht czysty i sklarowany. Za opłatą
-      200 zł Czarterujący nie musi sprzątać jachtu po zakończeniu najmu.
+      Przy wydaniu jachtu pobierana jest obligatoryjna opłata za sprzątanie w
+      wysokości 150 zł za jachty do 9 metrów długości i 200 zł powyżej 9 metrów.
     </Li>
     <Li>
       W przypadku zabrania na pokład psa pobierana jest opłata dodatkowa w
