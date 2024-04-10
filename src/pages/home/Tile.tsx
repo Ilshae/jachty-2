@@ -37,21 +37,6 @@ const Card = styled(MUICard)`
   &:hover {
     background-color: ${({ theme }) => theme.color.secondary} !important;
   }
-
-  &:nth-of-type(12) {
-    height: 410px;
-  }
-
-  @media ${device.tablet} {
-    &:nth-of-type(12) {
-      height: 362px;
-    }
-  }
-  @media ${device.mobileM} {
-    &:nth-of-type(12) {
-      height: 262px;
-    }
-  }
 `
 
 const CardActions = styled(MUICardConent)`

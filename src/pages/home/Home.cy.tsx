@@ -35,6 +35,6 @@ describe("<Home />", () => {
     cy.get('[alt="Antila 27 Aldonika"]').should("have.length", 2)
     cy.get('[alt="Antila 33.3 Przygoda"]').should("have.length", 2)
     cy.get('[alt="Antila 28.2 Galapagos"]').should("have.length", 2)
-    cy.get('[alt="Twister 800N Strzyga"]').should("have.length", 1)
+    cy.get('[alt="Twister 800N Strzyga"]').should("have.length", 2)
   })
 })

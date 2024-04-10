@@ -1965,6 +1965,27 @@ const yachts: Yacht[] = [
       "01.09 - 08.09": "300",
       "08.09 - 06.10": "300",
     },
+    previewGallery: [
+      "twister-800n-strzyga/strzyga1.jpg",
+      "twister-800n-strzyga/strzyga4.jpg",
+    ],
+    gallery: [
+      "twister-800n-strzyga/strzyga1.jpg",
+      "twister-800n-strzyga/strzyga2.jpg",
+      "twister-800n-strzyga/strzyga3.jpg",
+      "twister-800n-strzyga/strzyga4.jpg",
+      "twister-800n-strzyga/strzyga5.jpg",
+      "twister-800n-strzyga/strzyga6.jpg",
+      "twister-800n-strzyga/strzyga7.jpg",
+      "twister-800n-strzyga/strzyga8.jpg",
+      "twister-800n-strzyga/strzyga9.jpg",
+      "twister-800n-strzyga/strzyga10.jpg",
+      "twister-800n-strzyga/strzyga11.jpg",
+      "twister-800n-strzyga/strzyga12.jpg",
+      "twister-800n-strzyga/strzyga13.jpg",
+      "twister-800n-strzyga/strzyga14.jpg",
+      "twister-800n-strzyga/strzyga15.jpg",
+    ],
   },
 ]
 
