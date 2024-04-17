@@ -194,6 +194,7 @@ const yachts: Yacht[] = [
     equipment: {
       sailing: [
         "szprycbuda",
+        "echosonda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
         "podpórka podmasztowa",
@@ -283,6 +284,8 @@ const yachts: Yacht[] = [
       "twister-800n-strzyga/strzyga13.jpg",
       "twister-800n-strzyga/strzyga14.jpg",
       "twister-800n-strzyga/strzyga15.jpg",
+      "twister-800n-strzyga/strzyga16.jpg",
+      "twister-800n-strzyga/strzyga17.jpg",
     ],
   },
   {
