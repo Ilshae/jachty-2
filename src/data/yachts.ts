@@ -227,7 +227,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 120 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 2 x 30 l",
         "paliwo pełny do pełnego",
@@ -382,7 +386,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 120 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 2 x 30 l",
         "paliwo pełny do pełnego",
@@ -541,7 +549,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 80 l",
         "paliwo pełny do pełnego",
@@ -692,7 +704,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 2 x 20 l",
         "paliwo pełny do pełnego",
@@ -849,7 +865,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 110 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiornik na wodę 80 l",
         "paliwo 12 l, pełny do pełnego",
@@ -1007,7 +1027,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 80 l",
         "paliwo pełny do pełnego",
@@ -1162,7 +1186,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 3 x 100 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 100 l",
         "paliwo pełny do pełnego",
@@ -1321,7 +1349,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 80 l",
         "paliwo pełny do pełnego",
@@ -1472,7 +1504,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 80 l",
         "paliwo pełny do pełnego",
@@ -1626,7 +1662,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 80 l",
         "paliwo pełny do pełnego",
@@ -1786,7 +1826,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 100 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 100 l",
         "paliwo pełny do pełnego",
@@ -1932,7 +1976,11 @@ const yachts: Yacht[] = [
         "przedłużacz",
         "akumulator 2 x 10 Ah",
       ],
-      security: ["komplet środków ratunkowych 8 kamizelek + koło", "gaśnica"],
+      security: [
+        "komplet środków ratunkowych 8 kamizelek + koło",
+        "gaśnica",
+        "ubezpieczenie OC, CASCO i NW",
+      ],
       exploitation: [
         "zbiorniki na wodę 80 l",
         "paliwo pełny do pełnego",
