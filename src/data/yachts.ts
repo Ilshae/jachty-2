@@ -193,7 +193,6 @@ const yachts: Yacht[] = [
     },
     equipment: {
       sailing: [
-        "szprycbuda",
         "echosonda",
         "patent do stawiania masztu typu ramka",
         "rolfok na sztywnym sztagu",
