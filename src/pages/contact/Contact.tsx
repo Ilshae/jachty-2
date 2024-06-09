@@ -42,9 +42,14 @@ const Contact = () => {
           />
         </Section>
       </Container>
+
       <Wrapper>
         <Iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d44629.01965325222!2d21.770680197903015!3d53.99347556531054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x846d550c071fa0d3!2sJachty%20Pruszy%C5%84ski!5e0!3m2!1spl!2spl!4v1611162386444!5m2!1spl!2spl" />
       </Wrapper>
+
+      <HeightWrapper>
+        <Background />
+      </HeightWrapper>
     </>
   )
 }
@@ -115,6 +120,34 @@ const Link = styled.a`
 
 const Text = styled.span`
   margin-left: 8px;
+`
+
+const HeightWrapper = styled.section`
+  max-height: 650px;
+  height: 650px;
+
+  @media ${device.laptopL} {
+    max-height: 500px;
+    height: 500px;
+  }
+  @media ${device.laptop} {
+    max-height: 350px;
+    height: 350px;
+  }
+  @media ${device.tablet} {
+    max-height: 250px;
+    height: 250px;
+  }
+`
+
+const Background = styled.div`
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/backgrounds/port.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: scroll;
+  display: flex;
 `
 
 const Wrapper = styled.div`
